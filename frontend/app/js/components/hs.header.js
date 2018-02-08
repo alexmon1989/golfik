@@ -1601,13 +1601,11 @@
    * @return Object
    */
   HSHeaderHideSectionObserver.prototype.init = function() {
-
     this.offset = isFinite( this.element.data('header-fix-moment') ) ? this.element.data('header-fix-moment') : 5;
     this.section = this.element.find('.u-header__section--hidden');
     this.defaultState = true;
 
     this.sectionHeight = this.section.length ? this.section.outerHeight() : 0;
-
 
     return this;
 
