@@ -90,6 +90,7 @@ gulp.task('js', ['custom-js'], function() {
 		'./app/js/helpers/hs.hamburgers.js',
 		'./app/js/components/hs.popup.js',
 		'./app/js/components/hs.carousel.js',
+		'./app/js/components/hs.go-to.js',
 		'./app/js/custom.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
