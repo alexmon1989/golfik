@@ -45,6 +45,7 @@ gulp.task('css', ['sass'], function() {
 		'./app/vendor/dzsparallaxer/dzsscroller/scroller.css',
 		'./app/vendor/dzsparallaxer/advancedscroller/plugin.css',
 		'./app/vendor/fancybox/jquery.fancybox.min.css',
+		'./app/vendor/slick-carousel/slick/slick.css',
 		'./app/vendor/animate.css',
 		'./app/css/main.css',
 		])
@@ -83,10 +84,12 @@ gulp.task('js', ['custom-js'], function() {
 		'./app/vendor/dzsparallaxer/dzsscroller/scroller.js',
 		'./app/vendor/dzsparallaxer/advancedscroller/plugin.js',
 		'./app/vendor/fancybox/jquery.fancybox.min.js',
+		'./app/vendor/slick-carousel/slick/slick.js',
 		'./app/js/hs.core.js',
 		'./app/js/components/hs.header.js',
 		'./app/js/helpers/hs.hamburgers.js',
 		'./app/js/components/hs.popup.js',
+		'./app/js/components/hs.carousel.js',
 		'./app/js/custom.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
