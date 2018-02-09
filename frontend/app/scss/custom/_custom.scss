@@ -2,6 +2,15 @@
 
 // Variables
 @import "custom.variables";
+@import "../settings/_variables.scss";
 
 // Mixins
 @import "custom.mixins";
+
+.g-bg-green {
+  &-opacity {
+    &-0_7 {
+      background-color: rgba($g-color-green, .7) !important; // R
+    }
+  }
+}
