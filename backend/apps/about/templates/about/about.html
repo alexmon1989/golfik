@@ -1,7 +1,5 @@
 {% extends 'master.html' %}
 
-{% load staticfiles %}
-
 {% block title %}{% if page_data.meta_title %}{{ page_data.meta_title }}{% else %}О нас{% endif %}{% endblock %}
 {% block keywords %}{{ page_data.meta_keywords }}{% endblock %}
 {% block description %}{{ page_data.meta_description }}{% endblock %}

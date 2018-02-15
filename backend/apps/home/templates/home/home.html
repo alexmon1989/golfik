@@ -1,7 +1,5 @@
 {% extends 'master.html' %}
 
-{% load staticfiles %}
-
 {% block title %}{% if article.meta_title %}{{ article.meta_title }}{% else %}Главная страница{% endif %}{% endblock %}
 {% block keywords %}{{ article.meta_keywords }}{% endblock %}
 {% block description %}{{ article.meta_description }}{% endblock %}
