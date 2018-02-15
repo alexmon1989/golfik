@@ -1,0 +1,17 @@
+{% extends 'master.html' %}
+
+{% block title %}{% if page_data.meta_title %}{{ page_data.meta_title }}{% else %}Оплата, доставка{% endif %}{% endblock %}
+{% block keywords %}{{ page_data.meta_keywords }}{% endblock %}
+{% block description %}{{ page_data.meta_description }}{% endblock %}
+
+{% block content %}
+
+    <!-- Breadcrumbs Block -->
+    {% include 'delivery/_partials/breadcrumbs.html' %}
+    <!-- End Breadcrumbs Block -->
+
+    <!-- Article Block -->
+    {% include 'delivery/_partials/article.html' %}
+    <!-- End Article Block -->
+
+{% endblock %}

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'apps.home.apps.HomeConfig',
     'apps.about.apps.AboutConfig',
+    'apps.delivery.apps.DeliveryConfig',
 ]
 
 MIDDLEWARE = [
