@@ -4,7 +4,7 @@ from .models import Delivery
 
 
 class DeliveryView(TemplateView):
-    """Отображает главную страницу."""
+    """Отображает страницу Оплата, доставка."""
     template_name = 'delivery/delivery.html'
 
     def get_context_data(self, **kwargs):

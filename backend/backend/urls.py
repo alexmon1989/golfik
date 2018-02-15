@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('apps.home.urls')),
     path('about/', include('apps.about.urls')),
     path('delivery/', include('apps.delivery.urls')),
+    path('contacts/', include('apps.contacts.urls')),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 if settings.DEBUG:

@@ -4,7 +4,7 @@ from .models import About
 
 
 class AboutView(TemplateView):
-    """Отображает главную страницу."""
+    """Отображает страницу О нас."""
     template_name = 'about/about.html'
 
     def get_context_data(self, **kwargs):

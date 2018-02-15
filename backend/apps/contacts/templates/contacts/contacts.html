@@ -1,0 +1,30 @@
+{% extends 'master.html' %}
+
+{% block title %}{% if page_data.meta_title %}{{ page_data.meta_title }}{% else %}Оплата, доставка
+{% endif %}{% endblock %}
+{% block keywords %}{{ page_data.meta_keywords }}{% endblock %}
+{% block description %}{{ page_data.meta_description }}{% endblock %}
+
+{% block content %}
+
+    <!-- Breadcrumbs Block -->
+    {% include 'contacts/_partials/breadcrumbs.html' %}
+    <!-- End Breadcrumbs Block -->
+
+    <section class="container g-pt-100 g-pb-40">
+        <div class="row justify-content-between">
+            <div class="col-md-7 g-mb-60">
+                <!-- Contact Form -->
+                {% include 'contacts/_partials/form.html' %}
+                <!-- End Contact Form -->
+            </div>
+
+            <div class="col-md-4">
+                <!-- Contact Data -->
+                {% include 'contacts/_partials/contact_data.html' %}
+                <!-- End Contact Data -->
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
