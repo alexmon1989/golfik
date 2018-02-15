@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'ckeditor_uploader',
+    'easy_thumbnails',
     'debug_toolbar',
-    'home.apps.HomeConfig',
+    'apps.home.apps.HomeConfig',
+    'apps.about.apps.AboutConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,7 +131,10 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "../static")
 
-INTERNAL_IPS = ['127.0.0.1',]
+MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../media'))
+MEDIA_URL = '/media/'
+
+INTERNAL_IPS = ['127.0.0.1']
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_IMAGE_BACKEND = "pillow"
@@ -187,4 +192,11 @@ CKEDITOR_CONFIGS = {
         ]),
         'allowedContent': True,
     }
+}
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'about_lg': {'size': (1200, 750), 'crop': False},
+        'about_sm': {'size': (525, 330), 'crop': False},
+    },
 }
