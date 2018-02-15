@@ -7,3 +7,4 @@ frontend/app/js/custom.min.js
 .env/
 static/
 media/
+database/

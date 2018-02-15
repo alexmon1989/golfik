@@ -1,0 +1,106 @@
+{% load staticfiles %}
+
+<header id="js-header"
+        class="u-header u-header--static u-header--show-hide u-header--change-appearance u-header--has-hidden-element"
+        data-header-fix-moment="500" data-header-fix-effect="slide">
+    <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-15"
+         data-header-fix-moment-exclude="g-py-15" data-header-fix-moment-classes="u-shadow-v18 g-py-7">
+        <div class="container">
+            <div class="d-lg-flex flex-md-row align-items-center g-pos-rel">
+                <!-- Responsive Toggle Button -->
+                <button class="navbar-toggler navbar-toggler-right btn g-hidden-lg-up g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
+                        type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
+                        data-toggle="collapse" data-target="#navBar">
+              <span class="hamburger hamburger--slider">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+              </span>
+              </span>
+                </button>
+                <!-- End Responsive Toggle Button -->
+                <!-- Logo -->
+                <a href="index.html" class="navbar-brand">
+                    <img src="{% static 'img/logo/logo-header.png' %}" alt="Logo">
+                </a>
+                <!-- End Logo -->
+
+                <div class="col g-mt-10 g-mt-0--lg g-px-0">
+                    <div class="row flex-row align-items-start align-items-lg-center justify-content-lg-end text-uppercase g-font-weight-600 u-header--hidden-element g-color-gray-dark-v2 g-font-size-13 text-lg-right g-mt-minus-10 g-mb-20">
+                        <div class="col-auto g-px-15 g-mt-10">
+                            <i class="fa fa-phone g-font-size-14 g-mr-3"></i>
+                            <a class="g-color-main" href="tel:+38 (096) 297-17-51">+38 (096) 297-17-51</a>
+                        </div>
+
+                        <div class="col-auto g-px-15 g-mt-10">
+                            <i class="fa fa-envelope g-font-size-14 g-mr-3"></i>
+                            <a class="g-color-main" href="mailto:3119414@ukr.net">3119414@ukr.net</a>
+                        </div>
+
+                        <div class="col-auto g-px-15 g-mt-10">
+                            <i class="fa fa-sign-in g-font-size-14 g-mr-3"></i>
+                            <a class="g-color-main" href="login.html">Вход</a>
+                        </div>
+                    </div>
+
+                    <nav class="navbar navbar-expand-lg p-0">
+                        <!-- Navigation -->
+                        <div class="js-mega-menu collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg"
+                             id="navBar">
+                            <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
+                                <li class="nav-item g-mx-20--lg active">
+                                    <a href="index.html" class="nav-link px-0">Главная
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item g-mx-20--lg">
+                                    <a href="about-us.html" class="nav-link px-0">О нас</a>
+                                </li>
+                                <li class="nav-item hs-has-sub-menu g-mx-20--lg">
+                                    <a href="categories-list.html" class="nav-link g-px-0" id="nav-link-1"
+                                       aria-haspopup="true" aria-expanded="false"
+                                       aria-controls="nav-submenu-1">Товары</a>
+                                    <!-- Submenu -->
+                                    <ul class="hs-sub-menu list-unstyled g-text-transform-none g-brd-top g-brd-primary g-brd-top-2 g-min-width-200 g-mt-14 g-mt-10--lg--scrolling"
+                                        id="nav-submenu-1" aria-labelledby="nav-link-1">
+                                        <li class="dropdown-item">
+                                            <a class="nav-link g-px-0" href="category.html">Ходовая</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="nav-link g-px-0" href="category.html">Салон</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="nav-link g-px-0" href="category.html">Кузовщина</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="nav-link g-px-0" href="category.html">Рулевое</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="nav-link g-px-0" href="category.html">Двигатель</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="nav-link g-px-0" href="category.html">Электрооборудование</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="nav-link g-px-0" href="category.html">Колёса</a>
+                                        </li>
+                                        <li class="dropdown-item">
+                                            <a class="nav-link g-px-0" href="category.html">Прочее</a>
+                                        </li>
+                                    </ul>
+                                    <!-- End Submenu -->
+                                </li>
+                                <li class="nav-item g-mx-20--lg ">
+                                    <a href="delivery.html" class="nav-link px-0">Оплата, доставка</a>
+                                </li>
+                                <li class="nav-item g-mx-20--lg ">
+                                    <a href="contacts.html" class="nav-link px-0">Контакты</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Navigation -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

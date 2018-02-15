@@ -1,0 +1,23 @@
+{% extends 'master.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{% if article.meta_title %}{{ article.meta_title }}{% else %}Главная страница{% endif %}{% endblock %}
+{% block keywords %}{{ article.meta_keywords }}{% endblock %}
+{% block description %}{{ article.meta_description }}{% endblock %}
+
+{% block content %}
+
+    <!-- Promo Block -->
+    {% include 'home/_partials/parallax.html' %}
+    <!-- End Promo Block -->
+
+    <!-- Article Block -->
+    {% include 'home/_partials/article.html' %}
+    <!-- End Article Block -->
+
+    <!-- Categories Block -->
+    {% include 'home/_partials/categories.html' %}
+    <!-- End Categories Block -->
+
+{% endblock %}
