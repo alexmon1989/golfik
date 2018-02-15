@@ -1,0 +1,47 @@
+{% load thumbnail %}
+
+<section class="container g-pt-100 g-pb-70">
+    <div class="row justify-content-center g-mb-60">
+        <div class="col-lg-7">
+            <!-- Heading -->
+            <div class="text-center">
+                <h2 class="h3 g-color-black text-uppercase mb-2">{{ page_data.title }}</h2>
+                {% if page_data.under_title_text %}
+                    <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
+                    <p class="lead mb-0">{{ page_data.under_title_text|safe }}</p>
+                {% endif %}
+            </div>
+            <!-- End Heading -->
+        </div>
+    </div>
+
+    <div class="row g-mb-30">
+        <div class="col g-mb-30">
+            <div class="mb-5 g-font-size-16">
+                {{ page_data.text|safe }}
+            </div>
+            <a class="btn btn-md u-btn-primary g-font-size-default rounded-0 g-py-10" href="categories.html">Перейти к
+                товарам</a>
+        </div>
+        {% if page_data.image %}
+            <div class="col-lg-6">
+                <div class="g-pa-10 g-brd-around g-brd-gray-light-v4">
+                    <a class="js-fancybox d-block u-block-hover g-pos-rel" href="javascript:;"
+                       data-fancybox="lightbox-gallery--04" data-src="{{ page_data.image|thumbnail_url:'about_lg' }}"
+                       data-speed="350"
+                       data-caption="Мой восстановленный VW Golf 1990 г.в.">
+                        <img class="img-fluid u-block-hover__main--zoom-v1"
+                             src="{{ page_data.image|thumbnail_url:'about_sm' }}"
+                             alt="{{ page_data.image_text }}">
+                        <span class="u-icon-v3 u-icon-size--xs g-bg-white g-color-black g-rounded-50x g-cursor-pointer g-pos-abs g-bottom-10 g-right-10">
+                        <i class="hs-icon hs-icon-magnifier"></i>
+                    </span>
+                    </a>
+                    {% if page_data.image_text %}
+                        <p class="text-center g-mt-10 g-mb-0">{{ page_data.image_text }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
