@@ -6,9 +6,7 @@ from .models import Contact
 class ContactsAdmin(SingleModelAdmin):
     """Класс для описание интерфейса администрирования модели Contact."""
     fields = (
-        'phone',
-        'email',
-        'form_email',
+        'text',
         'meta_h1',
         'meta_title',
         'meta_keywords',
