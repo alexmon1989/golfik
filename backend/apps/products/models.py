@@ -75,21 +75,12 @@ class Product(SeoModel, TimeStampedModel):
         ordering = ('-created_at',)
 
 
-class ProductPhotoQuerySet(models.QuerySet):
-
-    def delete(self, *args, **kwargs):
-        for obj in self:
-            obj.image.delete()
-        super(ProductPhotoQuerySet, self).delete(*args, **kwargs)
-
-
 class ProductPhoto(TimeStampedModel):
     """Модель фотографии товара."""
 
     def upload_to(instance, filename):
         return 'products/{}/{}'.format(instance.product.pk, filename)
 
-    objects = ProductPhotoQuerySet.as_manager()
     image = models.ImageField(
         'Изображение',
         upload_to=upload_to,
@@ -100,25 +91,6 @@ class ProductPhoto(TimeStampedModel):
 
     def __str__(self):
         return 'Изображение #{}'.format(self.pk)
-
-    def delete(self, *args, **kwargs):
-        """Переопределение метода дял удаления файла с диска при удалении объекта."""
-        self.image.delete()
-        super(ProductPhoto, self).delete(*args, **kwargs)
-
-    def remove_on_image_update(self):
-        """Проверяет изменилось ли изображение и удаляет старый файл, если необходимо."""
-        try:
-            obj = ProductPhoto.objects.get(id=self.id)
-        except ProductPhoto.DoesNotExist:
-            return
-        if obj.image and self.image and obj.image != self.image:
-            obj.image.delete()
-
-    def save(self, *args, **kwargs):
-        """Переопределение метода дял удаления файла с диска при изменении объекта."""
-        self.remove_on_image_update()
-        return super(ProductPhoto, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Изображение'
