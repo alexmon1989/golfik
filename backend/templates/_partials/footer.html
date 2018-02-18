@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load project_tags %}
 
 <div class="g-bg-black-opacity-0_9 g-color-white-opacity-0_8 g-py-60">
     <div class="container">
@@ -18,38 +19,13 @@
                 </div>
 
                 <ul class="u-list-inline g-font-size-12">
-                    <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15"
-                           href="category.html">Ходовая</a>
-                    </li>
-                    <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15"
-                           href="category.html">Салон</a>
-                    </li>
-                    <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15"
-                           href="category.html">Кузовщина</a>
-                    </li>
-                    <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15"
-                           href="category.html">Рулевое</a>
-                    </li>
-                    <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15"
-                           href="category.html">Двигатель</a>
-                    </li>
-                    <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15"
-                           href="category.html">Колёса</a>
-                    </li>
-                    <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15"
-                           href="category.html">Электрооборудование</a>
-                    </li>
-                    <li class="list-inline-item g-mb-10">
-                        <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15"
-                           href="category.html">Прочее</a>
-                    </li>
+                    {% categories as categories %}
+                    {% for category in categories %}
+                        <li class="list-inline-item g-mb-10">
+                            <a class="u-tags-v1 g-brd-around g-brd-white-opacity-0_1 g-bg-primary--hover g-brd-primary--hover g-color-white-opacity-0_8 g-rounded-50 g-py-4 g-px-15"
+                               href="{% url 'products_list' slug=category.slug %}">{{ category.title }}</a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
             <!-- End Footer Content -->
