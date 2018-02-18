@@ -13,7 +13,7 @@
                             <div class="js-slide">
                                 <a class="js-fancybox" href="javascript:;" data-fancybox="lightbox-gallery--07-1"
                                    data-src="{{ photo.image|thumbnail_url:'product_lg' }}" data-is-infinite="true"
-                                   data-caption="Lightbox Gallery" data-speed="300">
+                                   data-caption="{{ product.title }}" data-speed="300">
                                     <img class="img-fluid g-rounded-6" src="{{ photo.image|thumbnail_url:'product_md' }}"
                                          alt="">
                                 </a>
