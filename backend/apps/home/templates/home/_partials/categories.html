@@ -1,71 +1,30 @@
-{% load staticfiles %}
+{% load thumbnail %}
 
 <section>
     <div class="container g-py-60">
-        <div class="row">
+          <div class="row">
             <div class="col-12 u-heading-v2-3--bottom g-brd-primary g-mb-20">
-                <h2 class="h4 u-heading-v2__title g-color-gray-dark-v2 g-font-weight-600 text-uppercase">Категории
-                    товаров</h2>
+                <h2 class="h4 u-heading-v2__title g-color-gray-dark-v2 g-font-weight-600 text-uppercase">Категории товаров</h2>
             </div>
-        </div>
+          </div>
 
         <div class="row text-center">
-            <div class="col-md-4 g-mb-30">
-                <a class="d-block u-block-hover u-bg-overlay g-bg-black-opacity-0_5--after" href="category.html">
-                    <img class="img-fluid u-block-hover__main--zoom-v1"
-                         src="{% static 'img/categories/hodovaya.jpg' %}" alt="Image Description">
-                    <strong class="h4 d-block w-100 u-bg-overlay__inner g-absolute-centered g-px-20 g-font-weight-400 g-color-white g-mt-10">Ходовая</strong>
-                </a>
-            </div>
-            <div class="col-md-4 g-mb-30">
-                <a class="d-block u-block-hover u-bg-overlay g-bg-black-opacity-0_5--after" href="category.html">
-                    <img class="img-fluid u-block-hover__main--zoom-v1"
-                         src="{% static 'img/categories/salon.jpg' %}" alt="Image Description">
-                    <strong class="h4 d-block w-100 u-bg-overlay__inner g-absolute-centered g-px-20 g-font-weight-400 g-color-white g-mt-10">Салон</strong>
-                </a>
-            </div>
-            <div class="col-md-4 g-mb-30">
-                <a class="d-block u-block-hover u-bg-overlay g-bg-black-opacity-0_5--after" href="category.html">
-                    <img class="img-fluid u-block-hover__main--zoom-v1"
-                         src="{% static 'img/categories/kuzovshina.jpg' %}" alt="Image Description">
-                    <strong class="h4 d-block w-100 u-bg-overlay__inner g-absolute-centered g-px-20 g-font-weight-400 g-color-white g-mt-10">Кузовщина</strong>
-                </a>
-            </div>
-            <div class="col-md-4 g-mb-30">
-                <a class="d-block u-block-hover u-bg-overlay g-bg-black-opacity-0_5--after" href="category.html">
-                    <img class="img-fluid u-block-hover__main--zoom-v1"
-                         src="{% static 'img/categories/rulevoe.jpg' %}" alt="Image Description">
-                    <strong class="h4 d-block w-100 u-bg-overlay__inner g-absolute-centered g-px-20 g-font-weight-400 g-color-white g-mt-10">Рулевое</strong>
-                </a>
-            </div>
-            <div class="col-md-4 g-mb-30">
-                <a class="d-block u-block-hover u-bg-overlay g-bg-black-opacity-0_5--after" href="category.html">
-                    <img class="img-fluid u-block-hover__main--zoom-v1"
-                         src="{% static 'img/categories/dvigatel.jpg' %}" alt="Image Description">
-                    <strong class="h4 d-block w-100 u-bg-overlay__inner g-absolute-centered g-px-20 g-font-weight-400 g-color-white g-mt-10">Двигатель</strong>
-                </a>
-            </div>
-            <div class="col-md-4 g-mb-30">
-                <a class="d-block u-block-hover u-bg-overlay g-bg-black-opacity-0_5--after" href="category.html">
-                    <img class="img-fluid u-block-hover__main--zoom-v1"
-                         src="{% static 'img/categories/electro.jpg' %}" alt="Image Description">
-                    <strong class="h4 d-block w-100 u-bg-overlay__inner g-absolute-centered g-px-20 g-font-weight-400 g-color-white g-mt-10">Электроооборудование</strong>
-                </a>
-            </div>
-            <div class="col-md-4 g-mb-30">
-                <a class="d-block u-block-hover u-bg-overlay g-bg-black-opacity-0_5--after" href="category.html">
-                    <img class="img-fluid u-block-hover__main--zoom-v1"
-                         src="{% static 'img/categories/kolesa.JPG' %}" alt="Image Description">
-                    <strong class="h4 d-block w-100 u-bg-overlay__inner g-absolute-centered g-px-20 g-font-weight-400 g-color-white g-mt-10">Колёса</strong>
-                </a>
-            </div>
-            <div class="col-md-4 g-mb-30">
-                <a class="d-block u-block-hover u-bg-overlay g-bg-black-opacity-0_5--after" href="category.html">
-                    <img class="img-fluid u-block-hover__main--zoom-v1"
-                         src="{% static 'img/categories/prochee.jpg' %}" alt="Image Description">
-                    <strong class="h4 d-block w-100 u-bg-overlay__inner g-absolute-centered g-px-20 g-font-weight-400 g-color-white g-mt-10">Прочее</strong>
-                </a>
-            </div>
+            {% for category in category_list %}
+                <div class="col-md-4 g-mb-30">
+                    <a class="d-block u-block-hover u-bg-overlay g-bg-black-opacity-0_5--after" href="{% url 'products_list' slug=category.slug %}">
+                        {% if category.image %}
+                            <img class="img-fluid u-block-hover__main--zoom-v1"
+                                 src="{{ category.image|thumbnail_url:'category' }}"
+                                 alt="{{ category.title }}">
+                        {% else %}
+                            <img class="img-fluid u-block-hover__main--zoom-v1"
+                                 src="//via.placeholder.com/400x270?text=No+Image"
+                                 alt="Изображение отсутствует">
+                        {% endif %}
+                        <strong class="h4 d-block w-100 u-bg-overlay__inner g-absolute-centered g-px-20 g-font-weight-400 g-color-white g-mt-10">{{ category.title }}</strong>
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
