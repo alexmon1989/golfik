@@ -54,37 +54,21 @@
                                 <li class="nav-item g-mx-20--lg {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
                                     <a href="{% url 'about' %}" class="nav-link px-0">О нас</a>
                                 </li>
-                                <li class="nav-item hs-has-sub-menu g-mx-20--lg {% if request.resolver_match.url_name|in_list:'categories_list,products_list' %}active{% endif %}">
+                                <li class="nav-item hs-has-sub-menu g-mx-20--lg {% if request.resolver_match.url_name|in_list:'categories_list,products_list,product_detail' %}active{% endif %}">
                                     <a href="{% url 'categories_list' %}" class="nav-link g-px-0" id="nav-link-1"
                                        aria-haspopup="true" aria-expanded="false"
                                        aria-controls="nav-submenu-1">Товары</a>
                                     <!-- Submenu -->
                                     <ul class="hs-sub-menu list-unstyled g-text-transform-none g-brd-top g-brd-primary g-brd-top-2 g-min-width-200 g-mt-14 g-mt-10--lg--scrolling"
                                         id="nav-submenu-1" aria-labelledby="nav-link-1">
-                                        <li class="dropdown-item">
-                                            <a class="nav-link g-px-0" href="category.html">Ходовая</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="nav-link g-px-0" href="category.html">Салон</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="nav-link g-px-0" href="category.html">Кузовщина</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="nav-link g-px-0" href="category.html">Рулевое</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="nav-link g-px-0" href="category.html">Двигатель</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="nav-link g-px-0" href="category.html">Электрооборудование</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="nav-link g-px-0" href="category.html">Колёса</a>
-                                        </li>
-                                        <li class="dropdown-item">
-                                            <a class="nav-link g-px-0" href="category.html">Прочее</a>
-                                        </li>
+                                        {% categories as categories %}
+                                        {% for category in categories %}
+                                            <li class="dropdown-item {% if request.resolver_match.url_name|in_list:'products_list,product_detail' and category.slug in request.path %}active{% endif %}">
+                                                <a class="nav-link g-px-0"
+                                                   href="{% url 'products_list' slug=category.slug %}"
+                                                >{{ category.title }}</a>
+                                            </li>
+                                        {% endfor %}
                                     </ul>
                                     <!-- End Submenu -->
                                 </li>

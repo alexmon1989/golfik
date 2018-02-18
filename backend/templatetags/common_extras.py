@@ -1,4 +1,5 @@
 from django import template
+from apps.products.models import Category
 
 register = template.Library()
 
@@ -14,3 +15,8 @@ def url_replace(request, field, value):
     dict_ = request.GET.copy()
     dict_[field] = value
     return dict_.urlencode()
+
+
+@register.simple_tag
+def categories():
+    return Category.objects.enabled().order_by('-weight')
