@@ -1,0 +1,17 @@
+{% extends 'master.html' %}
+
+{% block title %}{% if page_data.meta_title %}{{ page_data.meta_title }}{% else %}{{ product.title }}{% endif %}{% endblock %}
+{% block keywords %}{{ page_data.meta_keywords }}{% endblock %}
+{% block description %}{{ page_data.meta_description }}{% endblock %}
+
+{% block content %}
+
+    <!-- Breadcrumbs Block -->
+    {% include 'products/product/_partials/breadcrumbs.html' %}
+    <!-- End Breadcrumbs Block -->
+
+    <!-- Product Details Block -->
+    {% include 'products/product/_partials/product_detail.html' %}
+    <!-- End Product Details Block -->
+
+{% endblock %}

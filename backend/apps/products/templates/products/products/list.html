@@ -1,0 +1,44 @@
+{% extends 'master.html' %}
+
+{% block title %}{% if page_data.meta_title %}{{ page_data.meta_title }}{% else %}{{ category.title }}
+{% endif %}{% endblock %}
+{% block keywords %}{{ page_data.meta_keywords }}{% endblock %}
+{% block description %}{{ page_data.meta_description }}{% endblock %}
+
+{% block content %}
+
+    <!-- Breadcrumbs Block -->
+    {% include 'products/products/_partials/breadcrumbs.html' %}
+    <!-- End Breadcrumbs Block -->
+
+    <section>
+        <div class="container g-py-100">
+            <div class="row">
+                <div class="col-md-9 order-md-2">
+                    {% if product_list|length > 0 %}
+                        <!-- Products Block -->
+                        {% include 'products/products/_partials/products_list.html' %}
+                        <!-- End Products Block -->
+                    {% else %}
+                        <p>В данной категории нет товаров.</p>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-3 order-md-1 g-brd-right--lg g-brd-gray-light-v4">
+                    <!-- Sidebar Block -->
+                    {% include 'products/products/_partials/sidebar.html' %}
+                    <!-- End Sidebar Block -->
+                </div>
+            </div>
+
+            {% if category.text %}
+                <div class="row g-mt-60">
+                    <div class="col-12 text-muted">
+                        {{ category.text|safe }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}

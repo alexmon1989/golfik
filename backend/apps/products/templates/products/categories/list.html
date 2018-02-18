@@ -1,0 +1,17 @@
+{% extends 'master.html' %}
+
+{% block title %}{% if page_data.meta_title %}{{ page_data.meta_title }}{% else %}Категории товаров{% endif %}{% endblock %}
+{% block keywords %}{{ page_data.meta_keywords }}{% endblock %}
+{% block description %}{{ page_data.meta_description }}{% endblock %}
+
+{% block content %}
+
+    <!-- Breadcrumbs Block -->
+    {% include 'products/categories/_partials/breadcrumbs.html' %}
+    <!-- End Breadcrumbs Block -->
+
+    <!-- Categories Block -->
+    {% include 'products/categories/_partials/categories_list.html' %}
+    <!-- End Categories Block -->
+
+{% endblock %}

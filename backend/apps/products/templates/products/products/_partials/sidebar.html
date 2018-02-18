@@ -1,0 +1,13 @@
+<div class="g-mb-30 g-pr-15--lg">
+    <h3 class="h5 mb-3 g-color-black">Категории</h3>
+
+    <ul class="list-unstyled">
+        {% for item in categories %}
+        <li class="my-3">
+            <a class="d-block u-link-v5 g-color-main g-color-primary--hover {% if item == category %}g-color-primary--active active{% endif %}"
+               href="{% url 'products_list' slug=item.slug %}">{{ item.title }}
+                <span class="float-right g-font-size-12">{{ item.product_set.count }}</span></a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

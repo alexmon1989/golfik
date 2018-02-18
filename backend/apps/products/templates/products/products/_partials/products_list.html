@@ -1,0 +1,58 @@
+{% load thumbnail %}
+
+<!-- Products Block -->
+<div class="row g-pl-15--lg">
+    {% for product in product_list %}
+        <div class="col-md-6 col-lg-4 g-mb-30">
+            <!-- Article -->
+            <article class="g-pos-rel g-bg-white">
+
+                <a class="d-block u-block-hover rounded" href="{% url 'product_detail' category_slug=category.slug slug=product.slug %}">
+                    {% if product.get_first_photo %}
+                        <img class="img-fluid u-block-hover__main--zoom-v1"
+                             src="{{ product.get_first_photo.image|thumbnail_url:'product_sm' }}"
+                             alt="{{ product.title }}">
+                    {% else %}
+                        <img class="img-fluid u-block-hover__main--zoom-v1"
+                             src="//via.placeholder.com/400x270?text=No+Image"
+                             alt="Изображение отсутствует">
+                    {% endif %}
+                </a>
+
+                {% if product.in_stock %}
+                    <div class="u-ribbon-v1 g-color-white g-bg-green-opacity-0_7 g-font-weight-600 g-font-size-10 text-uppercase g-top-10 g-left-10 rounded">
+                        В наличии
+                    </div>
+                {% else %}
+                    <div class="u-ribbon-v1 g-color-white g-bg-red-opacity-0_5 g-font-weight-600 g-font-size-10 text-uppercase g-top-10 g-left-10 rounded">
+                        Нет в наличии
+                    </div>
+                {% endif %}
+
+                <!-- Article Content -->
+                <div class="g-py-15">
+                    <a class="g-color-main" href="item.html"><h3 class="h5">{{ product.title }}</h3></a>
+                    <ul class="list-unstyled g-font-size-13 g-mb-20">
+                        <li>
+                            <span class="g-color-primary">Подходит для:</span>
+                            {{ product.car }}
+                        </li>
+                        <li>
+                            <span class="g-color-primary">Стоимость:</span>
+                            {{ product.price }} {% if product.currency == 1 %}грн{% else %}${% endif %}
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Article Content -->
+            </article>
+            <!-- End Article -->
+        </div>
+    {% endfor %}
+</div>
+<!-- End Products Block -->
+
+{% if is_paginated %}
+    <!-- Pagination -->
+    {% include 'products/products/_partials/pagination.html' %}
+    <!-- End Pagination -->
+{% endif %}

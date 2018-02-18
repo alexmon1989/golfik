@@ -30,7 +30,9 @@
     {% include '_partials/header.html' %}
     <!-- End Header -->
 
-    {% block content %}{% endblock %}
+    <div class="g-min-height-50vh">
+        {% block content %}{% endblock %}
+    </div>
 
     <!-- Footer -->
     {% include '_partials/footer.html' %}
@@ -59,19 +61,22 @@
 
         // initialization of HSMegaMenu component
         $('.js-mega-menu').HSMegaMenu({
-            event: 'hover',
-            pageContainer: $('.container'),
-            breakpoint: 991
+          event: 'hover',
+          pageContainer: $('.container'),
+          breakpoint: 991
         });
-    });
+      });
 
-    $(document).on('ready', function () {
+      $(document).on('ready', function () {
         // initialization of popups
         $.HSCore.components.HSPopup.init('.js-fancybox');
 
+        // initialization of carousel
+        $.HSCore.components.HSCarousel.init('.js-carousel');
+
         // initialization of go to
         $.HSCore.components.HSGoTo.init('.js-go-to');
-    });
+      });
 </script>
 </body>
 </html>

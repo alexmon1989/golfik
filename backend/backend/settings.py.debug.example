@@ -41,10 +41,12 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'easy_thumbnails',
     'debug_toolbar',
+    'django_cleanup',
     'apps.home.apps.HomeConfig',
     'apps.about.apps.AboutConfig',
     'apps.delivery.apps.DeliveryConfig',
     'apps.contacts.apps.ContactsConfig',
+    'apps.products.apps.ProductsConfig',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {
+                'project_tags': 'templatetags.common_extras',
+            },
         },
     },
 ]
@@ -200,5 +205,9 @@ THUMBNAIL_ALIASES = {
     '': {
         'about_lg': {'size': (1200, 750), 'crop': False},
         'about_sm': {'size': (525, 330), 'crop': False},
+        'category': {'size': (400, 270), 'crop': True},
+        'product_sm': {'size': (400, 270), 'crop': True},
+        'product_md': {'size': (800, 500), 'crop': True},
+        'product_lg': {'size': (1200, 750), 'crop': True},
     },
 }

@@ -3,6 +3,12 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from backend.abstract_models import SeoModel, TimeStampedModel
 
 
+class CategoryManager(models.Manager):
+    def enabled(self):
+        """Возвращает категории с is_enabled=True."""
+        return super(CategoryManager, self).get_queryset().filter(is_enabled=True)
+
+
 class Category(SeoModel, TimeStampedModel):
     """Модель категории товаров."""
     title = models.CharField('Название', max_length=255)
@@ -20,6 +26,8 @@ class Category(SeoModel, TimeStampedModel):
         default=1
     )
     is_enabled = models.BooleanField('Включено', default=True)
+
+    objects = CategoryManager()
 
     def __str__(self):
         return self.title
@@ -43,8 +51,19 @@ class Car(TimeStampedModel):
         ordering = ('title',)
 
 
+class ProductManager(models.Manager):
+    def enabled(self):
+        """Возвращает товары с is_enabled=True."""
+        return super(ProductManager, self).get_queryset().filter(is_enabled=True, category__is_enabled=True)
+
+
 class Product(SeoModel, TimeStampedModel):
     """Модель товара."""
+    CURRENCIES = (
+        (1, 'Гривна'),
+        (2, 'Доллар'),
+    )
+
     title = models.CharField('Название', max_length=255)
     slug = models.SlugField(
         'Slug',
@@ -58,16 +77,27 @@ class Product(SeoModel, TimeStampedModel):
     price = models.PositiveIntegerField('Стоимость', blank=True, null=True)
     currency = models.PositiveSmallIntegerField(
         'Валюта',
-        choices=(
-            (1, 'Гривна'),
-            (2, 'Доллар'),
-        ),
+        choices=CURRENCIES,
         default=1
     )
+    in_stock = models.BooleanField('В наличии', default=True)
     is_enabled = models.BooleanField('Включено', default=True)
+
+    objects = ProductManager()
 
     def __str__(self):
         return self.title
+
+    def get_first_photo(self):
+        """Возвращает первую фотографию продукта или None, если изображений нету."""
+        image = self.productphoto_set.filter(is_visible=True).order_by('created_at').first()
+        if not image:
+            return None
+        return image
+
+    def get_photos(self):
+        """Возвращает все видимые фотографии продукта."""
+        return self.productphoto_set.filter(is_visible=True).order_by('created_at')
 
     class Meta:
         verbose_name = 'Товар'
@@ -95,3 +125,4 @@ class ProductPhoto(TimeStampedModel):
     class Meta:
         verbose_name = 'Изображение'
         verbose_name_plural = 'Галерея товара'
+        ordering = ('created_at',)

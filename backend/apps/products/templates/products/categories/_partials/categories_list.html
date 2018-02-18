@@ -1,0 +1,30 @@
+{% load thumbnail %}
+
+<section>
+    <div class="container g-py-100">
+        <div class="row g-mb-30">
+            <div class="col-12">
+                <p class="g-font-size-16">Выбирайте интересующую вас категорию:</p>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            {% for category in category_list %}
+                <div class="col-md-4 g-mb-30">
+                    <a class="d-block u-block-hover u-bg-overlay g-bg-black-opacity-0_5--after" href="{% url 'products_list' slug=category.slug %}">
+                        {% if category.image %}
+                            <img class="img-fluid u-block-hover__main--zoom-v1"
+                                 src="{{ category.image|thumbnail_url:'category' }}"
+                                 alt="{{ category.title }}">
+                        {% else %}
+                            <img class="img-fluid u-block-hover__main--zoom-v1"
+                                 src="//via.placeholder.com/400x270?text=No+Image"
+                                 alt="Изображение отсутствует">
+                        {% endif %}
+                        <strong class="h4 d-block w-100 u-bg-overlay__inner g-absolute-centered g-px-20 g-font-weight-400 g-color-white g-mt-10">{{ category.title }}</strong>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
