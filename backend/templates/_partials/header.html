@@ -27,15 +27,13 @@
 
                 <div class="col g-mt-10 g-mt-0--lg g-px-0">
                     <div class="row flex-row align-items-start align-items-lg-center justify-content-lg-end text-uppercase g-font-weight-600 u-header--hidden-element g-color-gray-dark-v2 g-font-size-13 text-lg-right g-mt-minus-10 g-mb-20">
-                        <div class="col-auto g-px-15 g-mt-10">
-                            <i class="fa fa-phone g-font-size-14 g-mr-3"></i>
-                            <a class="g-color-main" href="tel:+38 (096) 297-17-51">+38 (096) 297-17-51</a>
-                        </div>
-
-                        <div class="col-auto g-px-15 g-mt-10">
-                            <i class="fa fa-envelope g-font-size-14 g-mr-3"></i>
-                            <a class="g-color-main" href="mailto:3119414@ukr.net">3119414@ukr.net</a>
-                        </div>
+                        {% contacts as contacts %}
+                        {% for contact in contacts %}
+                            <div class="col-auto g-px-15 g-mt-10">
+                                <i class="fa fa-{% if contact.contact_type == 1 %}phone{% else %}envelope{% endif %} g-font-size-14 g-mr-3"></i>
+                                <a class="g-color-main" href="{% if contact.contact_type == 1 %}tel{% else %}mailto{% endif %}:{{ contact.value }}">{{ contact.value }}</a>
+                            </div>
+                        {% endfor %}
 
                         <div class="col-auto g-px-15 g-mt-10">
                             <i class="fa fa-sign-in g-font-size-14 g-mr-3"></i>

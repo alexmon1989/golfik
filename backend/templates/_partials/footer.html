@@ -78,11 +78,19 @@
                 </div>
 
                 <address class="g-line-height-2 g-mt-minus-4">
-                    Телефон: <a class="g-color-white-opacity-0_7" href="tel:+38 (096) 297-17-51">+38 (096)
-                    297-17-51</a>
-                    <br>
-                    Email:
-                    <a class="g-color-white-opacity-0_7" href="mailto:3119414@ukr.net">3119414@ukr.net</a>
+                    {% contacts as contacts %}
+                    Телефон:<br>
+                    {% for contact in contacts %}
+                        {% if contact.contact_type == 1 %}
+                            <a class="g-color-white-opacity-0_7" href="tel:{{ contact.value }}">{{ contact.value }}</a><br>
+                        {% endif %}
+                    {% endfor %}
+                    Email:<br>
+                    {% for contact in contacts %}
+                        {% if contact.contact_type == 2 %}
+                            <a class="g-color-white-opacity-0_7" href="mailto:{{ contact.value }}">{{ contact.value }}</a><br>
+                        {% endif %}
+                    {% endfor %}
                 </address>
             </div>
             <!-- End Footer Content -->

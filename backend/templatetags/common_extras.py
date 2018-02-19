@@ -1,5 +1,6 @@
 from django import template
 from apps.products.models import Category
+from apps.contacts.models import ContactTemplate
 
 register = template.Library()
 
@@ -20,3 +21,8 @@ def url_replace(request, field, value):
 @register.simple_tag
 def categories():
     return Category.objects.enabled().order_by('-weight')
+
+
+@register.simple_tag
+def contacts():
+    return ContactTemplate.objects.filter(is_enabled=True).order_by('contact_type')
