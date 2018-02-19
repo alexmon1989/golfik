@@ -7,7 +7,8 @@
             <!-- Article -->
             <article class="g-pos-rel g-bg-white">
 
-                <a class="d-block u-block-hover rounded" href="{% url 'product_detail' category_slug=category.slug slug=product.slug %}">
+                <a class="d-block u-block-hover rounded"
+                   href="{% url 'product_detail' category_slug=category.slug slug=product.slug %}">
                     {% if product.get_first_photo %}
                         <img class="img-fluid u-block-hover__main--zoom-v1"
                              src="{{ product.get_first_photo.image|thumbnail_url:'product_sm' }}"
@@ -33,14 +34,18 @@
                 <div class="g-py-15">
                     <a class="g-color-main" href="item.html"><h3 class="h5">{{ product.title }}</h3></a>
                     <ul class="list-unstyled g-font-size-13 g-mb-20">
-                        <li>
-                            <span class="g-color-primary">Подходит для:</span>
-                            {{ product.car }}
-                        </li>
-                        <li>
-                            <span class="g-color-primary">Стоимость:</span>
-                            {{ product.price }} {% if product.currency == 1 %}грн{% else %}${% endif %}
-                        </li>
+                        {% if product.car %}
+                            <li>
+                                <span class="g-color-primary">Подходит для:</span>
+                                {{ product.car }}
+                            </li>
+                        {% endif %}
+                        {% if product.price %}
+                            <li>
+                                <span class="g-color-primary">Стоимость:</span>
+                                {{ product.price }} {% if product.currency == 1 %}грн{% else %}${% endif %}
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
                 <!-- End Article Content -->
