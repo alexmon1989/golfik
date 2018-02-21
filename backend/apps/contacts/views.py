@@ -1,12 +1,9 @@
 from django.views.generic import FormView
 from django.http import Http404, HttpResponse
-from django.views.decorators.csrf import csrf_exempt
-from django.utils.decorators import method_decorator
 from .models import Contact
 from .forms import ContactForm
 
 
-@method_decorator(csrf_exempt, name='dispatch')
 class ContactView(FormView):
     """Отображает страницу Контакты."""
     template_name = 'contacts/contacts.html'
