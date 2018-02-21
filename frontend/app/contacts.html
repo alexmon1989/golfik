@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <main>
+    <main id="app">
       <!-- Header -->
     <header id="js-header" class="u-header u-header--static u-header--show-hide u-header--change-appearance u-header--has-hidden-element" data-header-fix-moment="500" data-header-fix-effect="slide">
       <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-15" data-header-fix-moment-exclude="g-py-15" data-header-fix-moment-classes="u-shadow-v18 g-py-7">
@@ -149,36 +149,7 @@
         <div class="row justify-content-between">
           <div class="col-md-7 g-mb-60">
             <!-- Contact Form -->
-            <form>
-              <div class="row">
-                <div class="col-md-6 form-group g-mb-20">
-                  <label class="g-color-gray-dark-v2 g-font-size-13">Имя:</label>
-                  <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="text">
-                </div>
-
-                <div class="col-md-6 form-group g-mb-20">
-                  <label class="g-color-gray-dark-v2 g-font-size-13">Email:</label>
-                  <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="email">
-                </div>
-
-                <div class="col-md-6 form-group g-mb-20">
-                  <label class="g-color-gray-dark-v2 g-font-size-13">Тема:</label>
-                  <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="text">
-                </div>
-
-                <div class="col-md-6 form-group g-mb-20">
-                  <label class="g-color-gray-dark-v2 g-font-size-13">Телефон:</label>
-                  <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-3 g-py-13 g-px-15" type="tel">
-                </div>
-
-                <div class="col-md-12 form-group g-mb-40">
-                  <label class="g-color-gray-dark-v2 g-font-size-13">Сообщение:</label>
-                  <textarea class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-3 g-py-13 g-px-15" rows="7"></textarea>
-                </div>
-              </div>
-
-              <button class="btn u-btn-primary rounded-3 g-py-12 g-px-20" type="submit" role="button">Отправить сообщение</button>
-            </form>
+            <contact-form></contact-form>
             <!-- End Contact Form -->
           </div>
 

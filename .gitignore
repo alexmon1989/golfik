@@ -4,6 +4,7 @@ frontend/app/css/
 frontend/app/fonts/
 frontend/app/js/scripts.min.js
 frontend/app/js/custom.min.js
+frontend/app/js/bundle.min.js
 .env/
 static/
 media/

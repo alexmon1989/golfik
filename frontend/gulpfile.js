@@ -12,6 +12,7 @@ var 	gulp           = require('gulp'), // Gulp
 		autoprefixer   = require('gulp-autoprefixer'), // Add the desired vendor prefixes and remove unnecessary in SASS-files
 		notify         = require("gulp-notify");
 		babel 			= require('gulp-babel');
+		browserify 		= require('gulp-browserify');
 
 //
 // Fonts
@@ -50,7 +51,6 @@ gulp.task('css', ['sass'], function() {
 		'./app/css/main.css',
 		])
 	.pipe(concat('styles.min.css'))
-	.pipe(cleanCSS({level: {1: {specialComments: 0}}})) // Опционально, закомментировать при отладке
 	.pipe(gulp.dest('./app/css'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -58,6 +58,17 @@ gulp.task('css', ['sass'], function() {
 //
 // JS
 //
+
+gulp.task('vueify', function () {
+    gulp.src('./app/js/main.js')
+       .pipe(browserify({ transform: [
+	       	[{_flags: {debug: false}}, 'vueify'], 
+	       	'babelify',
+	       	[{ NODE_ENV: process.env.NODE_ENV === 'production' ? 'production' : 'development'}, 'envify'],
+       	] }))
+       .pipe(concat('bundle.min.js'))
+       .pipe(gulp.dest('./app/js'));
+});
 
 gulp.task('custom-js', function() {
 	return gulp.src([
@@ -71,7 +82,7 @@ gulp.task('custom-js', function() {
 	.pipe(gulp.dest('app/js'));
 });
 
-gulp.task('js', ['custom-js'], function() {
+gulp.task('js', ['vueify', 'custom-js'], function() {
 	return gulp.src([
 		'./app/vendor/jquery/jquery.min.js',
 		'./app/vendor/jquery-migrate/jquery-migrate.min.js',
@@ -91,10 +102,10 @@ gulp.task('js', ['custom-js'], function() {
 		'./app/js/components/hs.popup.js',
 		'./app/js/components/hs.carousel.js',
 		'./app/js/components/hs.go-to.js',
+		'./app/js/bundle.min.js',
 		'./app/js/custom.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
-	.pipe(uglify()) // Минимизировать весь js (на выбор)
 	.pipe(gulp.dest('./app/js'))
 	.pipe(browserSync.reload({stream: true}));
 });
@@ -132,7 +143,7 @@ gulp.task('browser-sync', function() {
 // Build
 //
 
-gulp.task('build', ['removedist', 'imagemin', 'css', 'js'], function() {
+gulp.task('build', ['set-prod-node-env', 'clearcache', 'removedist', 'js',  'css', 'imagemin'], function() {
 
 	var buildFiles = gulp.src([
 		'./app/*.html'
@@ -140,16 +151,33 @@ gulp.task('build', ['removedist', 'imagemin', 'css', 'js'], function() {
 
 	var buildCss = gulp.src([
 		'app/css/styles.min.css',
-		]).pipe(gulp.dest('dist/css'));
+		])		
+		.pipe(cleanCSS({level: {1: {specialComments: 0}}})) // Опционально, закомментировать при отладке
+		.pipe(gulp.dest('dist/css'));
 
 	var buildJs = gulp.src([
 		'app/js/scripts.min.js',
-		]).pipe(gulp.dest('dist/js'));
+		])
+		.pipe(uglify()) // Минимизировать весь js (на выбор)
+		.pipe(gulp.dest('dist/js'));
 
 	var buildFonts = gulp.src([
 		'app/fonts/*.*',
 		]).pipe(gulp.dest('dist/fonts'));
 
+});
+
+
+//
+// ENVs
+//
+
+gulp.task('set-dev-node-env', function() {
+    return process.env.NODE_ENV = 'development';
+});
+
+gulp.task('set-prod-node-env', function() {
+    return process.env.NODE_ENV = 'production';
 });
 
 
@@ -160,16 +188,22 @@ gulp.task('clearcache', function () { return cache.clearAll(); });
 // Watch
 //
 
-gulp.task('watch', ['css', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['set-dev-node-env', 'css', 'js', 'browser-sync'], function() {
 	gulp.watch([
 		'./app/scss/**/*.scss', 
 		'./app/vendor/**/*.scss', 
 		'./app/vendor/**/*.css'
 	], ['css']);
-	gulp.watch(['./app/js/**/*.js'], ['js']);
+	gulp.watch([
+		'./app/js/blocks/**/*.js',
+		'./app/js/components/**/*.js',
+		'./app/js/helpers/**/*.js',
+		'./app/js/vue-components/**/*.vue',
+		'./app/js/custom.js',
+		'./app/js/main.js', 
+		], ['js']);
 	gulp.watch('./app/*.html', browserSync.reload);
 });
-
 
 //
 // Default
