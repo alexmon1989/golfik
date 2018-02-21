@@ -50,6 +50,7 @@
 
 <script>
     import axios from 'axios';
+    import qs from 'qs';
 
     export default {
         data() {
@@ -73,13 +74,13 @@
                     if (result) {
                         this.processing = true;
 
-                        axios.post('/contacts/', {
+                        axios.post('/contacts/', qs.stringify({
                             username: this.username,
                             email: this.email,
                             subject: this.subject,
                             phone: this.phone,
                             message: this.message,
-                        })
+                        }))
                         .then(() => {
                             this.serverErrors = [];
                             this.sended = true;
