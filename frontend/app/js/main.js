@@ -8,10 +8,12 @@ Vue.use(VeeValidate, {
 });
 
 import ContactForm from './vue-components/ContactForm.vue';
+import LoginForm from './vue-components/LoginForm.vue';
 
 new Vue({
     el: '#app',
     components: {
-        ContactForm: ContactForm
+        ContactForm: ContactForm,
+        LoginForm: LoginForm,
     }
 });

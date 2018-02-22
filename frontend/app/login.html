@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <main>
+    <main id="app">
       <!-- Header -->
     <header id="js-header" class="u-header u-header--static u-header--show-hide u-header--change-appearance u-header--has-hidden-element" data-header-fix-moment="500" data-header-fix-effect="slide">
       <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-15" data-header-fix-moment-exclude="g-py-15" data-header-fix-moment-classes="u-shadow-v18 g-py-7">
@@ -132,35 +132,7 @@
               </header>
 
               <!-- Form -->
-              <form class="g-py-15" action="" method="post">
-                <div class="mb-4">
-                  <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Email:</label>
-                  <input required class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="email" placeholder="johndoe@gmail.com">
-                </div>
-
-                <div class="g-mb-35">
-                  <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Пароль:</label>
-                  <input required class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15 mb-3" type="password" placeholder="Пароль">
-                  <div class="row justify-content-between">
-                    <div class="col align-self-center">
-                      <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-12 g-pl-25 mb-0">
-                        <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-                        <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-                          <i class="fa" data-check-icon="&#xf00c"></i>
-                        </div>
-                        Запомнить меня
-                      </label>
-                    </div>
-                    <div class="col align-self-center text-right">
-                      <a class="g-font-size-12" href="forget-password.html">Забыли пароль?</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mb-4">
-                  <button class="btn btn-md btn-block u-btn-primary rounded g-py-13" type="submit">Вход</button>
-                </div>
-              </form>
+              <login-form></login-form>
               <!-- End Form -->
 
               <footer class="text-center">

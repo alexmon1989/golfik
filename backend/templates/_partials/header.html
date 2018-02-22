@@ -31,14 +31,44 @@
                         {% for contact in contacts %}
                             <div class="col-auto g-px-15 g-mt-10">
                                 <i class="fa fa-{% if contact.contact_type == 1 %}phone{% else %}envelope{% endif %} g-font-size-14 g-mr-3"></i>
-                                <a class="g-color-main" href="{% if contact.contact_type == 1 %}tel{% else %}mailto{% endif %}:{{ contact.value }}">{{ contact.value }}</a>
+                                <a class="g-color-main"
+                                   href="{% if contact.contact_type == 1 %}tel{% else %}mailto{% endif %}:{{ contact.value }}">{{ contact.value }}</a>
                             </div>
                         {% endfor %}
 
-                        <div class="col-auto g-px-15 g-mt-10">
-                            <i class="fa fa-sign-in g-font-size-14 g-mr-3"></i>
-                            <a class="g-color-main" href="login.html">Вход</a>
-                        </div>
+                        {% if request.user.is_authenticated %}
+                            <div class="col-auto g-px-15 g-mt-10 text-left">
+                                <i class="fa fa-user g-font-size-14 g-mr-3"></i>
+                                <a href="#!" id="user-dropdown-invoker"
+                                   class="g-color-main g-color-primary--hover g-text-underline--none--hover"
+                                   aria-controls="user-dropdown" aria-haspopup="true" aria-expanded="false"
+                                   data-dropdown-event="click" data-dropdown-target="#user-dropdown"
+                                   data-dropdown-type="css-animation" data-dropdown-duration="300"
+                                   data-dropdown-hide-on-scroll="false" data-dropdown-animation-in="fadeIn"
+                                   data-dropdown-animation-out="fadeOut">
+                                    {{ request.user }}
+                                    <i class="fa fa-angle-down g-ml-7"></i>
+                                </a>
+                                <ul id="user-dropdown"
+                                    style="z-index: 9999"
+                                    class="list-unstyled g-pos-abs g-left-0 g-bg-white g-width-160 g-py-5 g-mt-18--lg g-brd-top g-brd-primary g-brd-top-2"
+                                    aria-labelledby="user-dropdown-invoker">
+                                    <li>
+                                        <a class="d-block g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5 g-px-20"
+                                           href="#!">Смена пароля</a>
+                                    </li>
+                                    <li>
+                                        <a class="d-block g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5 g-px-20"
+                                           href="{% url 'logout' %}"><i class="fa fa-sign-out g-font-size-14 g-mr-3"></i> Выход</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        {% else %}
+                            <div class="col-auto g-px-15 g-mt-10">
+                                <i class="fa fa-sign-in g-font-size-14 g-mr-3"></i>
+                                <a class="g-color-main" href="{% url 'login' %}">Вход</a>
+                            </div>
+                        {% endif %}
                     </div>
 
                     <nav class="navbar navbar-expand-lg p-0">

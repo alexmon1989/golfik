@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'debug_toolbar',
     'django_cleanup',
+    'apps.my_auth.apps.AuthConfig',
     'apps.home.apps.HomeConfig',
     'apps.about.apps.AboutConfig',
     'apps.delivery.apps.DeliveryConfig',
@@ -134,7 +135,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "../frontend/dist"),
+    os.path.join(BASE_DIR, "../frontend/app"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "../static")
 
@@ -211,3 +212,5 @@ THUMBNAIL_ALIASES = {
         'product_lg': {'size': (1200, 750), 'crop': True},
     },
 }
+
+LOGOUT_REDIRECT_URL = '/'

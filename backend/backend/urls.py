@@ -17,10 +17,15 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from apps.my_auth.views import MyLoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.home.urls')),
+
+    path('accounts/login/', MyLoginView.as_view(), name='login'),
+    path('accounts/', include('django.contrib.auth.urls')),
+
     path('about/', include('apps.about.urls')),
     path('delivery/', include('apps.delivery.urls')),
     path('contacts/', include('apps.contacts.urls')),
