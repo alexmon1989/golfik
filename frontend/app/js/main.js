@@ -12,6 +12,7 @@ import LoginForm from './vue-components/LoginForm.vue';
 import PasswordResetForm from './vue-components/PasswordResetForm.vue';
 import PasswordResetConfirmForm from './vue-components/PasswordResetConfirmForm.vue';
 import SignUpForm from './vue-components/SignUpForm.vue';
+import PasswordChangeForm from './vue-components/PasswordChangeForm.vue';
 
 new Vue({
   el: '#app',
@@ -20,6 +21,7 @@ new Vue({
     LoginForm: LoginForm,
     PasswordResetForm: PasswordResetForm,
     PasswordResetConfirmForm: PasswordResetConfirmForm,
-    SignUpForm: SignUpForm
+    SignUpForm: SignUpForm,
+    PasswordChangeForm: PasswordChangeForm
   }
 });
