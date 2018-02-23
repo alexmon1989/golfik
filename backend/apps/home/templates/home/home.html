@@ -1,8 +1,8 @@
 {% extends 'master.html' %}
 
 {% block title %}{% if article.meta_title %}{{ article.meta_title }}{% else %}Главная страница{% endif %}{% endblock %}
-{% block keywords %}{{ article.meta_keywords }}{% endblock %}
-{% block description %}{{ article.meta_description }}{% endblock %}
+{% block keywords %}{{ article.meta_keywords|default_if_none:'' }}{% endblock %}
+{% block description %}{{ article.meta_description|default_if_none:'' }}{% endblock %}
 
 {% block content %}
 
