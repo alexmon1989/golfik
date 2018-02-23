@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth import login
 from django.views.generic.edit import FormView
 from django.views.generic import TemplateView
@@ -28,7 +29,7 @@ class SignUpView(FormView):
 
     template_name = 'registration/sign_up.html'
     form_class = SignUpForm
-    success_url = '/'
+    success_url = '/accounts/sign-up-done/'
 
     def form_valid(self, form):
         form.save()
