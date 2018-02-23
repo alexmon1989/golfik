@@ -38,7 +38,7 @@
                         </li>
                     {% endif %}
 
-                    {% if product.price %}
+                    {% if product.price and perms.products.can_see_price %}
                         <li>
                             <span class="g-color-primary">Стоимость:</span>
                             <span class="g-font-size-16 g-font-weight-600">{{ product.price }}

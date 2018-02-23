@@ -110,6 +110,7 @@ class Product(SeoModel, TimeStampedModel):
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
         ordering = ('-created_at',)
+        permissions = (("can_see_price", "Может смотреть цену"),)
 
 
 class ProductPhoto(TimeStampedModel):
