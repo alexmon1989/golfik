@@ -25,6 +25,7 @@ urlpatterns = [
 
     path('accounts/login/', MyLoginView.as_view(), name='login'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('apps.my_auth.urls')),
 
     path('about/', include('apps.about.urls')),
     path('delivery/', include('apps.delivery.urls')),

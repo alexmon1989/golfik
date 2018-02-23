@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <main>
+    <main id="app">
       <!-- Header -->
     <header id="js-header" class="u-header u-header--static u-header--show-hide u-header--change-appearance u-header--has-hidden-element" data-header-fix-moment="500" data-header-fix-effect="slide">
       <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-15" data-header-fix-moment-exclude="g-py-15" data-header-fix-moment-classes="u-shadow-v18 g-py-7">
@@ -133,42 +133,14 @@
               </header>
 
               <!-- Form -->
-              <form class="g-py-15">
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6 mb-4">
-                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Имя:</label>
-                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="email" placeholder="Иванов">
-                  </div>
-
-                  <div class="col-xs-12 col-sm-6 mb-4">
-                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Фамилия:</label>
-                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="tel" placeholder="Иван">
-                  </div>
-                </div>
-
-                <div class="mb-4">
-                  <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Email*:</label>
-                  <input required="" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="email" placeholder="johndoe@gmail.com">
-                </div>
-
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6 mb-4">
-                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Пароль*:</label>
-                    <input required="" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="password" placeholder="Пароль">
-                  </div>
-
-                  <div class="col-xs-12 col-sm-6 mb-4">
-                    <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Подтверждение пароля*:</label>
-                    <input required="" class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="password" placeholder="Пароль">
-                  </div>
-                </div>
-
-                <div class="row mb-5">
-                  <div class="col-12">
-                    <button class="btn btn-md btn-block u-btn-primary rounded g-py-13 g-px-25" type="submit">Зарегистрироваться</button>
-                  </div>
-                </div>
-              </form>
+              <sign-up-form first_name="" 
+                            last_name="" 
+                            username="" 
+                            email="" 
+                            email-errors="" 
+                            username-errors="" 
+                            password1-errors="" 
+                            password2-errors=""></sign-up-form>
               <!-- End Form -->
 
               <footer class="text-center">
