@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VeeValidate, { Validator } from 'vee-validate';
+import VeeValidate, {Validator} from 'vee-validate';
 import ru from 'vee-validate/dist/locale/ru';
 
 Validator.localize('ru', ru);
@@ -14,12 +14,12 @@ import PasswordResetConfirmForm from './vue-components/PasswordResetConfirmForm.
 import SignUpForm from './vue-components/SignUpForm.vue';
 
 new Vue({
-    el: '#app',
-    components: {
-        ContactForm: ContactForm,
-        LoginForm: LoginForm,
-        PasswordResetForm: PasswordResetForm,
-        PasswordResetConfirmForm: PasswordResetConfirmForm,
-        SignUpForm: SignUpForm
-    }
+  el: '#app',
+  components: {
+    ContactForm: ContactForm,
+    LoginForm: LoginForm,
+    PasswordResetForm: PasswordResetForm,
+    PasswordResetConfirmForm: PasswordResetConfirmForm,
+    SignUpForm: SignUpForm
+  }
 });
