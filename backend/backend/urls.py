@@ -17,7 +17,15 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
 from apps.my_auth.views import MyLoginView
+from .sitemaps import StaticViewSitemap, CategorySitemap, ProductSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'categories': CategorySitemap,
+    'products': ProductSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +39,7 @@ urlpatterns = [
     path('delivery/', include('apps.delivery.urls')),
     path('contacts/', include('apps.contacts.urls')),
     path('products/', include('apps.products.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 if settings.DEBUG:

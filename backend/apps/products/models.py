@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from ckeditor_uploader.fields import RichTextUploadingField
 from backend.abstract_models import SeoModel, TimeStampedModel
 
@@ -31,6 +32,9 @@ class Category(SeoModel, TimeStampedModel):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('products_list', args=[self.slug])
 
     class Meta:
         verbose_name = 'Категория'
@@ -98,6 +102,9 @@ class Product(SeoModel, TimeStampedModel):
     def get_photos(self):
         """Возвращает все видимые фотографии продукта."""
         return self.productphoto_set.filter(is_visible=True).order_by('created_at')
+
+    def get_absolute_url(self):
+        return reverse('product_detail', args=[self.category.slug, self.slug])
 
     class Meta:
         verbose_name = 'Товар'
