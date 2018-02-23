@@ -10,9 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-
     <meta name="keywords" content="{% block keywords %}{% endblock %}">
     <meta name="description" content="{% block description %}{% endblock %}">
+
+    {% block meta %}{% endblock %}
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}">

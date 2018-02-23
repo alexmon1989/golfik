@@ -31,4 +31,3 @@ class ProductDetailView(DetailView):
     """Отображает страницу товара."""
     queryset = Product.objects.enabled()
     template_name = 'products/product/detail.html'
-
