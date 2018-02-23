@@ -60,7 +60,7 @@ gulp.task('css', ['sass'], function() {
 //
 
 gulp.task('vueify', function () {
-    gulp.src('./app/js/main.js')
+    return gulp.src('./app/js/main.js')
        .pipe(browserify({ transform: [
 	       	[{_flags: {debug: false}}, 'vueify'], 
 	       	'babelify',

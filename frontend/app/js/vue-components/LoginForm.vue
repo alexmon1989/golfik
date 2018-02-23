@@ -33,7 +33,7 @@
               </label>
             </div>
             <div class="col align-self-center text-right">
-              <a class="g-font-size-12" href="/password_reset/">Забыли пароль?</a>
+              <a class="g-font-size-12" href="/accounts/password_reset/">Забыли пароль?</a>
             </div>
           </div>
         </div>
