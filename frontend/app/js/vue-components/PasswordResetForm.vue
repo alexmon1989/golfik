@@ -1,6 +1,6 @@
 <template>    
     <div>  
-        <form class="g-py-15" action="" method="post">
+        <form @submit.prevent="validate" id="password-reset-form" class="g-py-15" action="" method="post">
           <div v-html="csrfField"></div>
           <p>Введите свой адрес электронной почты и мы вышлем вам новый пароль.</p>
           <div :class="{'u-has-error-v1': errors.has('email') || emailServerErrors.length > 0 }" class="mb-4">
@@ -28,6 +28,13 @@
         methods: {
           hideServerErrors() {
             this.showServerErrors = false;
+          },
+          validate() {
+            this.$validator.validateAll().then(result => {
+                if (result) {
+                    document.getElementById("password-reset-form").submit();
+                }
+            });            
           }
         }
     }

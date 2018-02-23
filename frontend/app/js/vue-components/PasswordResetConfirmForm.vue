@@ -1,6 +1,6 @@
 <template>    
     <div>  
-        <form class="g-py-15" action="" method="post">
+        <form @submit.prevent="validate" id="password-reset-confirm-form" class="g-py-15" action="" method="post">
           <div v-html="csrfField"></div>
           <div :class="{'u-has-error-v1': errors.has('new_password1') || (newpassword1Errors.length > 0 && showServerErrors) }" class="mb-4">
             <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Пароль:</label>
@@ -49,6 +49,13 @@
         methods: {
           hideServerErrors() {
             this.showServerErrors = false;
+          },
+          validate() {
+            this.$validator.validateAll().then(result => {
+                if (result) {
+                    document.getElementById("password-reset-confirm-form").submit();
+                }
+            });            
           }
         }
     }
