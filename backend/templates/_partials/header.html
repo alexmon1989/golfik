@@ -59,7 +59,7 @@
                                     </li>
                                     <li>
                                         <a class="d-block g-color-main g-color-primary--hover g-text-underline--none--hover g-py-5 g-px-20"
-                                           href="{% url 'logout' %}"><i class="fa fa-sign-out g-font-size-14 g-mr-3"></i> Выход</a>
+                                           href="{% url 'logout' %}?next={{ request.path }}"><i class="fa fa-sign-out g-font-size-14 g-mr-3"></i> Выход</a>
                                     </li>
                                 </ul>
                             </div>
