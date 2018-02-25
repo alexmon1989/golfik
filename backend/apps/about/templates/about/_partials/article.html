@@ -20,7 +20,7 @@
             <div class="mb-5 g-font-size-16">
                 {{ page_data.text|safe }}
             </div>
-            <a class="btn btn-md u-btn-primary g-font-size-default rounded-0 g-py-10" href="categories.html">Перейти к
+            <a class="btn btn-md u-btn-primary g-font-size-default rounded-0 g-py-10" href="{% url 'categories_list' %}">Перейти к
                 товарам</a>
         </div>
         {% if page_data.image %}
