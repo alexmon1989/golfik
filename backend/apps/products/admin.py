@@ -16,7 +16,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_filter = ('is_enabled', )
     fieldsets = (
         (None, {
-            'fields': ('title', 'slug', 'text', 'weight', 'is_enabled')
+            'fields': ('title', 'slug', 'image', 'text', 'weight', 'is_enabled')
         }),
         ('SEO опции', {
             'classes': ('collapse',),

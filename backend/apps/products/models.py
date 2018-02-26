@@ -19,7 +19,13 @@ class Category(SeoModel, TimeStampedModel):
         unique=True,
         help_text='Используется при формировании ссылки на страницу категории.'
     )
-    image = models.ImageField('Изображение', upload_to='categories/', blank=True, null=True)
+    image = models.ImageField(
+        'Изображение',
+        upload_to='categories/',
+        blank=True,
+        null=True,
+        help_text='Оптимальное разрешение - 400px * 270px'
+    )
     text = RichTextUploadingField('Текст', blank=True, null=True)
     weight = models.PositiveIntegerField(
         'Вес',
