@@ -5,12 +5,14 @@ from .models import Delivery
 
 class DeliveryAdmin(SingleModelAdmin):
     """Класс для описание интерфейса администрирования модели Delivery."""
-    fields = (
-        'text',
-        'meta_h1',
-        'meta_title',
-        'meta_keywords',
-        'meta_description'
+    fieldsets = (
+        (None, {
+            'fields': ('text',)
+        }),
+        ('SEO опции', {
+            'classes': ('collapse',),
+            'fields': ('meta_h1', 'meta_title', 'meta_keywords', 'meta_description'),
+        }),
     )
 
 

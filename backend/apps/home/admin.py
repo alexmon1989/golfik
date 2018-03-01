@@ -5,7 +5,15 @@ from .models import Home
 
 class HomeAdmin(SingleModelAdmin):
     """Класс для описание интерфейса администрирования модели Home."""
-    fields = ('meta_h1', 'text_2', 'text_3', 'meta_title', 'meta_keywords', 'meta_description')
+    fieldsets = (
+        (None, {
+            'fields': ('meta_h1', 'text_2', 'text_3', )
+        }),
+        ('SEO опции', {
+            'classes': ('collapse',),
+            'fields': ('meta_title', 'meta_keywords', 'meta_description'),
+        }),
+    )
 
 
 admin.site.register(Home, HomeAdmin)
