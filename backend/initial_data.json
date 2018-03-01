@@ -1,0 +1,758 @@
+[
+{
+    "model": "auth.group",
+    "fields": {
+        "name": "V.I.P.",
+        "permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$100000$ciByhvgQPDq3$LZM3J0DaJJn0XPvxrzhYflHsc1hcw0KwXsvLoPhFw5I=",
+        "last_login": "2018-03-01T09:55:56.983Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "alex.mon1989@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2018-02-15T09:34:23.156Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$100000$YgKUdOhoBR5p$+DelZLgU/cY2R17YLLXmfbfBQAVBmtoEEXXiA4ke5FQ=",
+        "last_login": "2018-02-23T09:05:25Z",
+        "is_superuser": false,
+        "username": "user",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2018-02-22T12:05:10Z",
+        "groups": [
+            1
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$100000$NExkgYGP7ASP$Sg/kWOyPPRfds+39PlSSjsYRM0Uvi2Si+h8IcqWjcvg=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "user2",
+        "first_name": "",
+        "last_name": "",
+        "email": "user2@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2018-02-23T12:11:11.903Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 1,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "products/1/richag-800-500.jpg",
+        "modified": "2018-02-19T08:31:28.658Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 2,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "products/1/richag-800-500_wSUTd5i.jpg",
+        "modified": "2018-02-19T08:31:29.414Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 3,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/salon.jpg",
+        "modified": "2018-03-01T09:22:51.005Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 4,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/hodovaya.jpg",
+        "modified": "2018-02-26T08:23:36.089Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 5,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "products/3/richag-800-500.jpg",
+        "modified": "2018-03-01T10:10:39.816Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 6,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "products/3/richag-800-500_vhNIXcA.jpg",
+        "modified": "2018-03-01T10:10:40.519Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 7,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/golf.jpg",
+        "modified": "2018-03-01T10:12:23.652Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 8,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/golf3.jpg",
+        "modified": "2018-03-01T10:13:47.794Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 9,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/golf4.jpg",
+        "modified": "2018-03-01T10:15:01.156Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 10,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/passat_b3.jpg",
+        "modified": "2018-03-01T10:16:39.637Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 11,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/passat_b4.jpeg",
+        "modified": "2018-03-01T10:18:13.822Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 12,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/audi-80.jpg",
+        "modified": "2018-03-01T10:19:07.367Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 13,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/moto.jpg",
+        "modified": "2018-03-01T10:20:44.763Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 14,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/tools.jpg",
+        "modified": "2018-03-01T10:22:21.076Z"
+    }
+},
+{
+    "model": "easy_thumbnails.source",
+    "pk": 15,
+    "fields": {
+        "storage_hash": "f9bde26a1556cd667f742bd34ec7c55e",
+        "name": "categories/oborudovanie.jpg",
+        "modified": "2018-03-01T10:23:23.555Z"
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 1,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "products/1\\richag-800-500.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-02-19T08:29:45.861Z",
+        "source": 1
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 2,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "products/1\\richag-800-500.jpg.1200x750_q85_crop.jpg",
+        "modified": "2018-02-19T08:31:28.462Z",
+        "source": 1
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 3,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "products/1\\richag-800-500.jpg.800x500_q85_crop.jpg",
+        "modified": "2018-02-19T08:31:28.785Z",
+        "source": 1
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 4,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "products/1\\richag-800-500_wSUTd5i.jpg.1200x750_q85_crop.jpg",
+        "modified": "2018-02-19T08:31:29.167Z",
+        "source": 2
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 5,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "products/1\\richag-800-500_wSUTd5i.jpg.800x500_q85_crop.jpg",
+        "modified": "2018-02-19T08:31:29.561Z",
+        "source": 2
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 6,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\salon.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T09:22:51.275Z",
+        "source": 3
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 7,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\hodovaya.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-02-26T08:23:36.239Z",
+        "source": 4
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 8,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "products/3\\richag-800-500.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T10:09:42.652Z",
+        "source": 5
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 9,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "products/3\\richag-800-500.jpg.1200x750_q85_crop.jpg",
+        "modified": "2018-03-01T10:10:39.605Z",
+        "source": 5
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 10,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "products/3\\richag-800-500.jpg.800x500_q85_crop.jpg",
+        "modified": "2018-03-01T10:10:39.977Z",
+        "source": 5
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 11,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "products/3\\richag-800-500_vhNIXcA.jpg.1200x750_q85_crop.jpg",
+        "modified": "2018-03-01T10:10:40.297Z",
+        "source": 6
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 12,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "products/3\\richag-800-500_vhNIXcA.jpg.800x500_q85_crop.jpg",
+        "modified": "2018-03-01T10:10:40.649Z",
+        "source": 6
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 13,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\golf.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T10:12:23.812Z",
+        "source": 7
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 14,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\golf3.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T10:13:47.954Z",
+        "source": 8
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 15,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\golf4.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T10:15:01.426Z",
+        "source": 9
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 16,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\passat_b3.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T10:16:39.797Z",
+        "source": 10
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 17,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\passat_b4.jpeg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T10:18:14.002Z",
+        "source": 11
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 18,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\audi-80.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T10:19:07.587Z",
+        "source": 12
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 19,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\moto.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T10:20:44.925Z",
+        "source": 13
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 20,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\tools.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T10:22:21.226Z",
+        "source": 14
+    }
+},
+{
+    "model": "easy_thumbnails.thumbnail",
+    "pk": 21,
+    "fields": {
+        "storage_hash": "d26becbf46ac48eda79c7a39a13a02dd",
+        "name": "categories\\oborudovanie.jpg.400x270_q85_crop.jpg",
+        "modified": "2018-03-01T10:23:23.735Z",
+        "source": 15
+    }
+},
+{
+    "model": "home.home",
+    "pk": 2,
+    "fields": {
+        "meta_title": "\u0413\u043b\u0430\u0432\u043d\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430",
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-02-15T11:18:14.821Z",
+        "updated_at": "2018-02-23T12:55:43.072Z",
+        "meta_h1": "\u0410\u0432\u0442\u043e\u0437\u0430\u043f\u0447\u0430\u0441\u0442\u0438 \u0434\u043b\u044f Volkswagen Golf II",
+        "text_2": "\u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0438 \u043d\u0435\u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0435 \u0431/\u0443",
+        "text_3": "<p>\u0420\u0430\u0434\u044b \u043f\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u043e\u0432\u0430\u0442\u044c \u0432\u0430\u0441 \u043d\u0430 \u043d\u0430\u0448\u0435\u043c \u0441\u0430\u0439\u0442\u0435!<br />\r\n\u0423 \u043d\u0430\u0441 \u0432\u044b \u0441\u043c\u043e\u0436\u0435\u0442\u0435 \u043d\u0430\u0439\u0442\u0438 \u043c\u043d\u043e\u0436\u0435\u0441\u0442\u0432\u043e \u0437\u0430\u043f\u0447\u0430\u0441\u0442\u0435\u0439 \u0434\u043b\u044f \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0435\u0439 \u043c\u0430\u0440\u043a\u0438 <strong>Volkswagen</strong>, \u0432 \u0447\u0430\u0441\u0442\u043d\u043e\u0441\u0442\u0438 \u0434\u043b\u044f \u043c\u043e\u0434\u0435\u043b\u0438 <strong>Golf 2-\u0433\u043e \u043f\u043e\u043a\u043e\u043b\u0435\u043d\u0438\u044f</strong> (1983 - 1992 \u0433.\u0432.). \u0415\u0441\u043b\u0438 \u0432\u044b \u043d\u0435 \u043d\u0430\u0448\u043b\u0438 \u043d\u0443\u0436\u043d\u0443\u044e \u0437\u0430\u043f\u0447\u0430\u0441\u0442\u044c \u0432 <a href=\"http://alexmon1989.cc.ua/golfik/categories-list.html\">\u043a\u0430\u0442\u0430\u043b\u043e\u0433\u0435 \u0442\u043e\u0432\u0430\u0440\u043e\u0432</a>, \u043f\u0440\u043e\u0441\u0442\u043e <a href=\"http://alexmon1989.cc.ua/golfik/contacts.html\">\u0441\u0432\u044f\u0436\u0438\u0442\u0435\u0441\u044c</a> \u0441 \u043d\u0430\u043c\u0438 \u0438 \u043c\u044b \u0441\u0434\u0435\u043b\u0430\u0435\u043c \u0432\u0441\u0451, \u0447\u0442\u043e\u0431 \u043e\u043d\u0430 \u0431\u044b\u043b\u0430 \u0443 \u0432\u0430\u0441. \u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u043e \u0432\u0441\u0435\u0439 \u0423\u043a\u0440\u0430\u0438\u043d\u0435.</p>"
+    }
+},
+{
+    "model": "about.about",
+    "pk": 1,
+    "fields": {
+        "meta_h1": "\u041e \u043d\u0430\u0441",
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-02-15T12:36:10.511Z",
+        "updated_at": "2018-02-16T09:20:18.598Z",
+        "title": "\u0427\u0435\u043c \u043c\u044b \u0437\u0430\u043d\u0438\u043c\u0430\u0435\u043c\u0441\u044f?",
+        "under_title_text": null,
+        "text": "<p>\u041c\u044b \u043f\u0440\u0435\u0434\u043b\u0430\u0433\u0430\u0435\u043c \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0435 \u043e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0435 (\u0431/\u0443) \u0437\u0430\u043f\u0447\u0430\u0441\u0442\u0438 \u0434\u043b\u044f Volkswagen Golf 2, Jetta 2.</p>",
+        "image": "",
+        "image_text": null
+    }
+},
+{
+    "model": "delivery.delivery",
+    "pk": 1,
+    "fields": {
+        "meta_h1": "\u041e\u043f\u043b\u0430\u0442\u0430, \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0430",
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-02-15T14:30:06.412Z",
+        "updated_at": "2018-02-16T09:21:52.815Z",
+        "text": "<h1 class=\"h2\">\u041e\u043f\u043b\u0430\u0442\u0430</h1>\r\n\r\n<p>\u0412\u044b \u043c\u043e\u0436\u0435\u0442\u0435 \u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u043e\u043f\u043b\u0430\u0442\u0443 \u043f\u0440\u0438 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u0438 \u0438\u043b\u0438 \u043f\u043e \u043f\u0440\u0435\u0434\u043e\u043f\u043b\u0430\u0442\u0435 \u0441 \u043f\u043e\u043c\u043e\u0449\u044c\u044e \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u0430 \u043d\u0430 \u043a\u0430\u0440\u0442\u0443 &quot;\u041f\u0440\u0438\u0432\u0430\u0442\u0431\u0430\u043d\u043a\u0430&quot;.</p>\r\n\r\n<p>\u0415\u0441\u043b\u0438 \u043f\u043e\u043f\u043e\u043b\u043d\u044f\u0435\u0442\u0435 \u0447\u0435\u0440\u0435\u0437 \u0442\u0435\u0440\u043c\u0438\u043d\u0430\u043b, \u0442\u043e \u043f\u043e\u0441\u043b\u0435 \u043e\u043f\u043b\u0430\u0442\u044b \u041d\u0415 \u0432\u044b\u0431\u0440\u0430\u0441\u044b\u0432\u0430\u0439\u0442\u0435 \u0447\u0435\u043a, \u043e\u043d \u043c\u043e\u0436\u0435\u0442 \u043f\u0440\u0438\u0433\u043e\u0434\u0438\u0442\u0441\u044f. \u041f\u043e \u0432\u0441\u0435\u043c \u0432\u043e\u043f\u0440\u043e\u0441\u0430\u043c \u043e\u0431\u0440\u0430\u0449\u0430\u0439\u0442\u0435\u0441\u044c, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044f \u043d\u0430\u0448\u0438 <a href=\"http://alexmon1989.cc.ua/golfik/contacts.html\">\u043a\u043e\u043d\u0442\u0430\u043a\u0442\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435</a>.</p>\r\n\r\n<h1 class=\"h2\">\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430</h1>\r\n\r\n<p>\u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 &quot;\u041d\u043e\u0432\u0430\u044f \u041f\u043e\u0447\u0442\u0430&quot;, &quot;\u0418\u043d\u0442\u0430\u0439\u043c&quot;. \u0412 \u0441\u043b\u0443\u0447\u0430\u0435&nbsp;\u043d\u0430\u043b\u043e\u0436\u0435\u043d\u043d\u043e\u0433\u043e \u043f\u043b\u0430\u0442\u0435\u0436\u0430, \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0437\u0430\u0440\u0430\u043d\u0435\u0435 \u0432\u043d\u0435\u0441\u0442\u0438 10% \u043f\u0440\u0435\u0434\u043e\u043f\u043b\u0430\u0442\u044b.</p>"
+    }
+},
+{
+    "model": "contacts.contact",
+    "pk": 1,
+    "fields": {
+        "meta_h1": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b",
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-02-15T15:03:38.271Z",
+        "updated_at": "2018-02-16T08:32:27.084Z",
+        "text": "<div class=\"mb-4\">\r\n<h2 class=\"h5 g-color-gray-dark-v2 g-font-weight-600\">\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u043f\u0438\u0441\u044c\u043c\u043e:</h2>\r\n\r\n<p>\u0417\u0430\u043f\u0447\u0430\u0441\u0442\u0438 \u0413\u043e\u043b\u044c\u0444, \u0414\u0436\u0435\u0442\u0442\u0430:<br />\r\n<a href=\"mailto:golf1990@ukr.net\">golf1990@ukr.net</a></p>\r\n\u0414\u0440\u0443\u0433\u0430\u044f \u0442\u0435\u0445\u043d\u0438\u043a\u0430:<br />\r\n<p><a href=\"mailto:igor241971@ukr.net\">igor241971@ukr.net</a></p>\r\n</div>\r\n\r\n<div class=\"mb-3\">\r\n<h2 class=\"h5 g-color-gray-dark-v2 g-font-weight-600\">\u041f\u043e\u0437\u0432\u043e\u043d\u0438\u0442\u0435 \u043d\u0430\u043c:</h2>\r\n\r\n<p class=\"g-color-gray-dark-v4\"><a class=\"g-color-gray-dark-v2\" href=\"tel:+38 (096) 297-17-51 \">+38 (096) 297-17-51</a> \u0410\u043d\u0434\u0440\u0435\u0439<br />\r\n<a class=\"g-color-gray-dark-v2\" href=\"tel:+38 (099) 603-12-34\">+38 (099) 603-12-34</a> \u0418\u0433\u043e\u0440\u044c</p>\r\n</div>"
+    }
+},
+{
+    "model": "contacts.contacttemplate",
+    "pk": 1,
+    "fields": {
+        "created_at": "2018-02-19T08:55:29.474Z",
+        "updated_at": "2018-02-19T08:55:29.474Z",
+        "contact_type": 1,
+        "value": "+38 (096) 297-17-51",
+        "is_enabled": true
+    }
+},
+{
+    "model": "contacts.contacttemplate",
+    "pk": 2,
+    "fields": {
+        "created_at": "2018-02-19T08:55:37.496Z",
+        "updated_at": "2018-02-19T08:55:37.496Z",
+        "contact_type": 1,
+        "value": "+38 (099) 603-12-34",
+        "is_enabled": true
+    }
+},
+{
+    "model": "contacts.contacttemplate",
+    "pk": 3,
+    "fields": {
+        "created_at": "2018-02-19T08:55:44.457Z",
+        "updated_at": "2018-02-19T08:55:44.457Z",
+        "contact_type": 2,
+        "value": "golf1990@ukr.net",
+        "is_enabled": true
+    }
+},
+{
+    "model": "contacts.contacttemplate",
+    "pk": 4,
+    "fields": {
+        "created_at": "2018-02-19T08:55:53.177Z",
+        "updated_at": "2018-02-19T08:55:53.177Z",
+        "contact_type": 2,
+        "value": "igor241971@ukr.net",
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+        "meta_h1": null,
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-03-01T09:59:24.727Z",
+        "updated_at": "2018-03-01T10:20:43.651Z",
+        "title": "\u041c\u043e\u0442\u043e",
+        "slug": "moto",
+        "image": "categories/moto.jpg",
+        "text": "",
+        "weight": 994,
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+        "meta_h1": null,
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-03-01T09:59:41.527Z",
+        "updated_at": "2018-03-01T10:22:19.762Z",
+        "title": "\u0418\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442",
+        "slug": "instrument",
+        "image": "categories/tools.jpg",
+        "text": "",
+        "weight": 1,
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+        "meta_h1": null,
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-03-01T09:59:59.089Z",
+        "updated_at": "2018-03-01T10:23:21.807Z",
+        "title": "\u041e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435",
+        "slug": "oborudovanie",
+        "image": "categories/oborudovanie.jpg",
+        "text": "",
+        "weight": 1,
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+        "meta_h1": null,
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-03-01T10:00:06.389Z",
+        "updated_at": "2018-03-01T10:13:46.220Z",
+        "title": "VW Golf 3",
+        "slug": "vw-golf-3",
+        "image": "categories/golf3.jpg",
+        "text": "",
+        "weight": 999,
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.category",
+    "pk": 7,
+    "fields": {
+        "meta_h1": null,
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-03-01T10:00:26.697Z",
+        "updated_at": "2018-03-01T10:15:00.002Z",
+        "title": "VW Golf 4",
+        "slug": "vw-golf-4",
+        "image": "categories/golf4.jpg",
+        "text": "",
+        "weight": 998,
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.category",
+    "pk": 8,
+    "fields": {
+        "meta_h1": null,
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-03-01T10:00:36.977Z",
+        "updated_at": "2018-03-01T10:16:38.413Z",
+        "title": "VW Passat B3",
+        "slug": "vw-passat-b3",
+        "image": "categories/passat_b3.jpg",
+        "text": "",
+        "weight": 997,
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.category",
+    "pk": 9,
+    "fields": {
+        "meta_h1": null,
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-03-01T10:00:47.613Z",
+        "updated_at": "2018-03-01T10:18:12.536Z",
+        "title": "VW Passat B4",
+        "slug": "vw-passat-b4",
+        "image": "categories/passat_b4.jpeg",
+        "text": "",
+        "weight": 996,
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.category",
+    "pk": 10,
+    "fields": {
+        "meta_h1": null,
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-03-01T10:00:54.537Z",
+        "updated_at": "2018-03-01T10:19:06.273Z",
+        "title": "Audi",
+        "slug": "audi",
+        "image": "categories/audi-80.jpg",
+        "text": "",
+        "weight": 995,
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.category",
+    "pk": 11,
+    "fields": {
+        "meta_h1": null,
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-03-01T10:02:01.863Z",
+        "updated_at": "2018-03-01T10:12:22.498Z",
+        "title": "VW Golf 2",
+        "slug": "vw-golf-2",
+        "image": "categories/golf.jpg",
+        "text": "",
+        "weight": 1000,
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.car",
+    "pk": 1,
+    "fields": {
+        "created_at": "2018-02-16T11:42:27.879Z",
+        "updated_at": "2018-02-16T11:42:27.879Z",
+        "title": "VW Golf 2"
+    }
+},
+{
+    "model": "products.car",
+    "pk": 3,
+    "fields": {
+        "created_at": "2018-03-01T10:07:07.901Z",
+        "updated_at": "2018-03-01T10:07:07.901Z",
+        "title": "VW Golf 3"
+    }
+},
+{
+    "model": "products.car",
+    "pk": 4,
+    "fields": {
+        "created_at": "2018-03-01T10:07:14.119Z",
+        "updated_at": "2018-03-01T10:07:20.847Z",
+        "title": "VW Passat B3"
+    }
+},
+{
+    "model": "products.car",
+    "pk": 5,
+    "fields": {
+        "created_at": "2018-03-01T10:07:27.817Z",
+        "updated_at": "2018-03-01T10:07:27.817Z",
+        "title": "VW Passat B4"
+    }
+},
+{
+    "model": "products.car",
+    "pk": 6,
+    "fields": {
+        "created_at": "2018-03-01T10:07:38.363Z",
+        "updated_at": "2018-03-01T10:07:38.363Z",
+        "title": "VW Golf 4"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "meta_h1": null,
+        "meta_title": null,
+        "meta_keywords": null,
+        "meta_description": "",
+        "created_at": "2018-03-01T10:09:36.296Z",
+        "updated_at": "2018-03-01T10:09:36.296Z",
+        "title": "\u0420\u044b\u0447\u0430\u0433 \u043f\u0440\u0430\u0432\u044b\u0439",
+        "slug": "rychag-pravyj",
+        "category": 11,
+        "text": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\r\n\r\n<p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>",
+        "car": 1,
+        "price": 500,
+        "currency": 1,
+        "in_stock": true,
+        "is_enabled": true
+    }
+},
+{
+    "model": "products.productphoto",
+    "pk": 8,
+    "fields": {
+        "created_at": "2018-03-01T10:09:36.396Z",
+        "updated_at": "2018-03-01T10:09:36.396Z",
+        "image": "products/3/richag-800-500.jpg",
+        "product": 3,
+        "is_visible": true
+    }
+},
+{
+    "model": "products.productphoto",
+    "pk": 9,
+    "fields": {
+        "created_at": "2018-03-01T10:09:36.436Z",
+        "updated_at": "2018-03-01T10:09:36.436Z",
+        "image": "products/3/richag-800-500_vhNIXcA.jpg",
+        "product": 3,
+        "is_visible": true
+    }
+}
+]
