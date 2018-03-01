@@ -118,10 +118,9 @@ gulp.task('js', ['vueify', 'custom-js'], function() {
 
 gulp.task('imagemin', function() {
 	return gulp.src([
-		'./app/img/**/*', 
-		'./app/img-temp/**/*'
+		'./app/img/**/*'
 	])
-	.pipe(cache(imagemin())) // Cache Images
+	.pipe(imagemin())
 	.pipe(gulp.dest('./dist/img')); 
 });
 
