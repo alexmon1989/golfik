@@ -77,17 +77,19 @@
                     <h2 class="u-heading-v3__title h6 text-uppercase g-brd-primary">Контакты</h2>
                 </div>
 
-                <address class="g-line-height-2 g-mt-minus-4">
+                <address class="g-line-height-2 g-mt-minus-4 g-color-white-opacity-0_7">
                     {% contacts as contacts %}
                     Телефон:<br>
                     {% for contact in contacts %}
                         {% if contact.contact_type == 1 %}
+                            <i class="fa fa-phone g-mr-3"></i>
                             <a class="g-color-white-opacity-0_7" href="tel:{{ contact.value }}">{{ contact.value }}</a><br>
                         {% endif %}
                     {% endfor %}
                     Email:<br>
                     {% for contact in contacts %}
                         {% if contact.contact_type == 2 %}
+                            <i class="fa fa-envelope g-mr-3"></i>
                             <a class="g-color-white-opacity-0_7" href="mailto:{{ contact.value }}">{{ contact.value }}</a><br>
                         {% endif %}
                     {% endfor %}
