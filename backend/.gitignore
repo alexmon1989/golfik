@@ -108,3 +108,4 @@ venv.bak/
 /backend/settings.py
 /db.sqlite3
 .idea/
+/docker-compose.yml

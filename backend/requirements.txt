@@ -8,3 +8,5 @@ Pillow==5.0.0
 pytz==2018.3
 singlemodeladmin==0.8
 sqlparse==0.2.4
+gunicorn==19.7.1
+psycopg2==2.7.3.2
