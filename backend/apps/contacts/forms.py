@@ -1,6 +1,8 @@
 from django import forms
-from django.core.mail import mail_managers
+from django.core.mail import send_mail
 from django.template import loader
+from django.conf import settings
+from .models import ContactTemplate
 
 
 class ContactForm(forms.Form):
@@ -23,4 +25,11 @@ class ContactForm(forms.Form):
                 'message': self.cleaned_data['message'],
             }
         )
-        mail_managers('Сообщение клиента с сайта', '', fail_silently=False, html_message=html_message)
+        emails = [x.value for x in ContactTemplate.objects.filter(contact_type=2, is_enabled=True)]
+        send_mail(
+            subject='Сообщение клиента с сайта',
+            message='',
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=emails,
+            fail_silently=False,
+            html_message=html_message)
