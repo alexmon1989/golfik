@@ -8,7 +8,7 @@
             <article class="g-pos-rel g-bg-white">
 
                 <a class="d-block u-block-hover rounded"
-                   href="{% url 'product_detail' category_slug=category.slug slug=product.slug %}">
+                   href="{% url 'product_detail' category_slug=category.slug pk=product.pk slug=product.slug %}">
                     {% if product.get_first_photo %}
                         <img class="img-fluid u-block-hover__main--zoom-v1"
                              src="{{ product.get_first_photo.image|thumbnail_url:'product_sm' }}"

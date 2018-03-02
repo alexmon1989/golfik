@@ -78,7 +78,6 @@ class Product(SeoModel, TimeStampedModel):
     slug = models.SlugField(
         'Slug',
         max_length=255,
-        unique=True,
         help_text='Используется при формировании ссылки на страницу товара.'
     )
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
@@ -110,7 +109,7 @@ class Product(SeoModel, TimeStampedModel):
         return self.productphoto_set.filter(is_visible=True).order_by('created_at')
 
     def get_absolute_url(self):
-        return reverse('product_detail', args=[self.category.slug, self.slug])
+        return reverse('product_detail', args=[self.category.slug, self.pk, self.slug])
 
     class Meta:
         verbose_name = 'Товар'
