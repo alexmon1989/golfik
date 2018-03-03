@@ -64,7 +64,11 @@ class Car(TimeStampedModel):
 class ProductManager(models.Manager):
     def enabled(self):
         """Возвращает товары с is_enabled=True."""
-        return super(ProductManager, self).get_queryset().filter(is_enabled=True, category__is_enabled=True)
+        return super(ProductManager, self).get_queryset().filter(
+            is_enabled=True,
+            category__isnull=False,
+            category__is_enabled=True
+        )
 
 
 class Product(SeoModel, TimeStampedModel):
@@ -80,7 +84,7 @@ class Product(SeoModel, TimeStampedModel):
         max_length=255,
         help_text='Используется при формировании ссылки на страницу товара.'
     )
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name='Категория', null=True, blank=True)
     text = RichTextUploadingField('Текст', blank=True, null=True)
     car = models.ForeignKey(Car, on_delete=models.SET_NULL, verbose_name='Подходит для', blank=True, null=True)
     price = models.PositiveIntegerField('Стоимость', blank=True, null=True)
@@ -109,7 +113,9 @@ class Product(SeoModel, TimeStampedModel):
         return self.productphoto_set.filter(is_visible=True).order_by('created_at')
 
     def get_absolute_url(self):
-        return reverse('product_detail', args=[self.category.slug, self.pk, self.slug])
+        if self.category:
+            return reverse('product_detail', args=[self.category.slug, self.pk, self.slug])
+        return '/'
 
     class Meta:
         verbose_name = 'Товар'
