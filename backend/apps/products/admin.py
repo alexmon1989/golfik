@@ -25,7 +25,7 @@ class CategoryAdmin(admin.ModelAdmin):
     )
     prepopulated_fields = {"slug": ("title",)}
     search_fields = ('title',)
-    list_editable = ('is_enabled',)
+    list_editable = ('is_enabled', 'weight')
 
 
 class ProductPhotoInline(admin.TabularInline):
