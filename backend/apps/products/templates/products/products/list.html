@@ -2,10 +2,10 @@
 
 {% load project_tags %}
 
-{% block title %}{% if page_data.meta_title %}{{ page_data.meta_title }}{% else %}{{ category.title }}
+{% block title %}{% if category.meta_title %}{{ category.meta_title }}{% else %}{{ category.title }}
 {% endif %}{% endblock %}
-{% block keywords %}{{ page_data.meta_keywords|default_if_none:'' }}{% endblock %}
-{% block description %}{{ page_data.meta_description|default_if_none:'' }}{% endblock %}
+{% block keywords %}{{ category.meta_keywords|default_if_none:'' }}{% endblock %}
+{% block description %}{{ category.meta_description|default_if_none:'' }}{% endblock %}
 
 {% if is_paginated %}
     {% block meta %}
