@@ -28,6 +28,13 @@
             </div>
 
             <div class="col-md-6">
+
+                {% if product.in_stock %}
+                    <span class="u-label g-bg-green g-rounded-20 g-px-15 g-mr-10 g-mb-5">В наличии</span>
+                {% else %}
+                    <span class="u-label g-bg-lightred g-rounded-20 g-px-15 g-mr-10 g-mb-5">Нет в наличии</span>
+                {% endif %}
+
                 <h2>{{ product.title }}</h2>
 
                 <ul class="list-unstyled g-mb-20">
