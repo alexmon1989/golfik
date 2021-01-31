@@ -1,7 +1,6 @@
 {% extends 'master.html' %}
 
-{% block title %}{% if page_data.meta_title %}{{ page_data.meta_title }}{% else %}Оплата, доставка
-{% endif %}{% endblock %}
+{% block title %}{% if page_data.meta_title %}{{ page_data.meta_title }}{% else %}Контакты{% endif %}{% endblock %}
 {% block keywords %}{{ page_data.meta_keywords|default_if_none:'' }}{% endblock %}
 {% block description %}{{ page_data.meta_description|default_if_none:'' }}{% endblock %}
 

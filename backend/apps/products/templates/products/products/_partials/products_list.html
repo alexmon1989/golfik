@@ -32,7 +32,7 @@
 
                 <!-- Article Content -->
                 <div class="g-py-15">
-                    <a class="g-color-main" href="item.html"><h3 class="h5">{{ product.title }}</h3></a>
+                    <a class="g-color-main" href="{% url 'product_detail' category_slug=category.slug pk=product.pk slug=product.slug %}"><h3 class="h5">{{ product.title }}</h3></a>
                     <ul class="list-unstyled g-font-size-13 g-mb-20">
                         {% if product.car %}
                             <li>

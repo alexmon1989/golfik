@@ -36,12 +36,14 @@ class ProductPhotoInline(admin.TabularInline):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     """Класс для описание интерфейса администрирования модели Product."""
-    list_display = ('title', 'category', 'car', 'price', 'currency', 'is_enabled', 'updated_at', 'created_at')
+    list_display = (
+        'title', 'category', 'car', 'price', 'currency', 'in_stock', 'is_enabled', 'updated_at', 'created_at'
+    )
     list_filter = ('is_enabled', 'category', 'car')
     search_fields = ('title',)
     fieldsets = (
         (None, {
-            'fields': ('title', 'slug', 'category', 'text', 'car', 'price', 'currency', 'is_enabled')
+            'fields': ('title', 'slug', 'category', 'text', 'car', 'price', 'currency', 'in_stock', 'is_enabled')
         }),
         ('SEO опции', {
             'classes': ('collapse',),

@@ -208,7 +208,7 @@ THUMBNAIL_ALIASES = {
         'about_lg': {'size': (1200, 750), 'crop': False},
         'about_sm': {'size': (525, 330), 'crop': False},
         'category': {'size': (400, 270), 'crop': True},
-        'product_sm': {'size': (400, 270), 'crop': True},
+        'product_sm': {'size': (400, 250), 'crop': True},
         'product_md': {'size': (800, 500), 'crop': True},
         'product_lg': {'size': (1200, 750), 'crop': True},
     },
