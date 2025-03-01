@@ -2,3 +2,5 @@
 static/
 media/
 database/
+/etc/ssl
+/etc/service.conf

@@ -1,20 +1,55 @@
 version: '3'
 
 services:
-  db:
-    image: postgres
-    volumes:
-      - /home/ubuntu/golfik_database:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: foo
-      POSTGRES_PASSWORD: foobar
-      POSTGRES_DB: golf2
-  web:
-    build: .
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn backend.wsgi -b 0.0.0.0:8000 -w 2"
-    volumes:
-      - .:/code
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
+    nginx:
+        restart: 'always'
+        image: 'umputun/nginx-le:latest'
+        hostname: nginx
+        container_name: golf2_nginx
+        volumes:
+          - ../static:/static
+          - ../media:/media
+          - ../etc/ssl:/etc/nginx/ssl
+          - ../etc/service.conf:/etc/nginx/service.conf
+          # - ./etc/service-example-2.conf:/etc/nginx/service2.conf # more services, should be service*.conf
+          # - ./etc/stream-example-2.conf:/etc/nginx/stream2.conf # more streams, should be stream*.conf
+          # - ./etc/conf.d:/etc/nginx/conf.d-le # configuration folder, all files from it will be added
+          # - ./etc/stream.conf:/etc/nginx/stream.conf.d-le # streams configuration folder, all files from it will be added
+        ports:
+          - '80:80'
+          - '443:443'
+        environment:
+          - TZ=America/Chicago
+          - LETSENCRYPT=false
+          - LE_EMAIL=name@example.com
+          - LE_FQDN=www.example.com
+    db:
+        restart: 'always'
+        image: postgres:10
+        container_name: golf2_db
+        volumes:
+          - ../database:/var/lib/postgresql/data
+        environment:
+          POSTGRES_USER: foo
+          POSTGRES_PASSWORD: foobar
+          POSTGRES_DB: golf2
+        healthcheck:  # Проверяет, что БД готова
+          test: ["CMD-SHELL", "pg_isready -U foo -d golf2"]
+          interval: 5s
+          timeout: 5s
+          retries: 5
+    web:    
+        restart: 'always'
+        container_name: golf2_web
+        build: .
+        command: sh -c "python manage.py makemigrations && python manage.py migrate && gunicorn backend.wsgi -b 0.0.0.0:8000 -w 2"
+        volumes:
+          - .:/code
+          - ../static:/static
+          - ../media:/media
+          - ../frontend/dist:/frontend/dist
+        ports:
+          - "8000:8000"
+        depends_on:
+          db:
+            condition: service_healthy  # `web` стартует только когда БД готова
